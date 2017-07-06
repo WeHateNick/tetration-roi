@@ -123,6 +123,9 @@ p {
   @media screen and (min-width: 768px) {
     padding: 3em;
   }
+  & + & {
+  	padding-top: 0;
+  }
 }
 
 // Component styles are injected through gulp
@@ -131,4 +134,5 @@ p {
 @import '../components/footer/footer';
 @import '../components/header/header';
 @import '../components/horizontal-stepper/horizontal-stepper';
+@import '../components/question/question';
 /* endinject */
