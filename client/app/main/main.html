@@ -18,10 +18,28 @@
   <horizontal-stepper steps="$ctrl.steps">
     <horizontal-step ng-repeat="step in $ctrl.steps" ng-show="step.active" active="step.active">
       <div layout="column">
-        <p flex>
-          {{step.description}}
-        </p>
         <div class="questions">
+          <div class="question">
+            <p>How many annual applications will you migrate each year?</p>
+            <md-input-container layout="row">
+              <label># of applications per security zone</label>
+              <input type="text" ng-model="foo" flex flex-gt-sm="50">
+            </md-input-container>
+          </div>
+          <div class="question">
+            <p>How many changes in the network or security environment will you require each year?</p>
+            <md-input-container layout="row">
+              <label># of applications per security zone</label>
+              <input type="text" ng-model="foo" flex flex-gt-sm="50">
+            </md-input-container>
+          </div>
+          <div class="question">
+            <p>How many applications will be impacted during a single change?</p>
+            <md-input-container layout="row">
+              <label># of applications per security zone</label>
+              <input type="text" ng-model="foo" flex flex-gt-sm="50">
+            </md-input-container>
+          </div>
         </div>
         <div class="step__actions" layout="row" layout-align="end">
           <md-button class="md-raised" ng-hide="$first" ng-click="$ctrl.previousStep();" aria-label="continue">
