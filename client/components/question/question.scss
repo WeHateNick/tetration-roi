@@ -1,0 +1,28 @@
+.question {
+	padding-top: 1em;
+	margin-bottom: 2em;
+	&__text {
+		padding-top: 1em;
+		&__number {
+			margin-right: 0.5em;
+			font-weight: $font__weight--bold;
+		}
+	}
+}
+.options {
+	margin-top: 2em;
+  @media screen and (min-width: 768px) {
+  	margin-top: 0;
+		padding: 0 2.5em;
+	}
+	&__labels {
+  	@media screen and (min-width: 768px) {
+			margin-top: 2em;
+			margin-bottom: 2em;
+		}
+	}
+	&__number {
+		padding-left: 6px;
+		padding-bottom: 10px;
+	}
+}

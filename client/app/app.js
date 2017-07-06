@@ -15,12 +15,14 @@ import constants from './app.constants';
 import util from '../components/util/util.module';
 import header from '../components/header/ct-header.component';
 import footer from '../components/footer/footer.component';
+import horizontalStepper from '../components/horizontal-stepper/horizontal-stepper.component';
+import horizontalStep from '../components/horizontal-stepper/horizontal-step/horizontal-step.component';
 
 import './app.scss';
 
 angular.module('tetrationRoiApp', [ngCookies, ngResource, ngSanitize, 
 	uiRouter, ngAnimate, ngMaterial, constants, util,
-	main, header, footer
+	main, header, footer, horizontalStepper, horizontalStep
 ])
   .config(routeConfig);
 

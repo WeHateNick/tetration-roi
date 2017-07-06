@@ -43,6 +43,8 @@ $palette--bg--primary: #425563;
 $palette--accent: #01A982;
 $palette--light-gray: #CCCCCC;
 $palette--text: #58585b;
+$palette--black: #222222;
+$palette--alert: #FFD042;
 $palette--gray: #999999;
 $font__weight--bold: 700;
 $box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24);
@@ -128,4 +130,5 @@ p {
 @import 'main/main';
 @import '../components/footer/footer';
 @import '../components/header/header';
+@import '../components/horizontal-stepper/horizontal-stepper';
 /* endinject */
