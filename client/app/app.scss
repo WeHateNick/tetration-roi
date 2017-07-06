@@ -39,8 +39,7 @@ $fa-font-path: '/assets/fonts/font-awesome/';
 
 // Variables
 $palette--bg: #F5F5F5;
-$palette--bg--primary: #425563;
-$palette--accent: #01A982;
+$palette--accent: #049FD9;
 $palette--light-gray: #CCCCCC;
 $palette--text: #58585b;
 $palette--black: #222222;
@@ -110,6 +109,7 @@ img {
 .md-button {
   font-weight: $font__weight--bold;
   margin-left: 0;
+  padding-top: 0.125em;
 }
 .md-button.md-accent.md-raised,
 .md-button.md-primary.md-raised {
