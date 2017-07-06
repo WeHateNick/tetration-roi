@@ -1,0 +1,11 @@
+.ct-header {
+  box-shadow: $box-shadow;
+  border-bottom: thin solid $rule;
+  &__logo {
+    max-width: 65px;
+    margin-right: 2em;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 0.5em 3em;
+  }
+}

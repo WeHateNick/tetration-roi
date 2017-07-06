@@ -13,14 +13,14 @@ import {routeConfig} from './app.config';
 import main from './main/main.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
-// import header from '../components/header/header.component';
+import header from '../components/header/ct-header.component';
 import footer from '../components/footer/footer.component';
 
 import './app.scss';
 
 angular.module('tetrationRoiApp', [ngCookies, ngResource, ngSanitize, 
 	uiRouter, ngAnimate, ngMaterial, constants, util,
-	main, footer
+	main, header, footer
 ])
   .config(routeConfig);
 

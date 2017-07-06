@@ -2,8 +2,34 @@ $fa-font-path: '/assets/fonts/font-awesome/';
 @import '~font-awesome/scss/font-awesome';
 @import '~angular-material/angular-material.min';
 
-// @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,900|Roboto:300,500,700,900);
-
+@font-face {
+  font-family: "Cisco Sans";
+  src: url(/assets/fonts/cisco-sans/CiscoSansTTRegular.woff2),
+  			url(/assets/fonts/cisco-sans/CiscoSansTTRegular.woff);
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cisco Sans";
+  src: url(/assets/fonts/cisco-sans/CiscoSansTTRegularOblique.woff2),
+  			url(/assets/fonts/cisco-sans/CiscoSansTTRegularOblique.woff);
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Cisco Sans";
+  src: url(/assets/fonts/cisco-sans/CiscoSansTTBold.woff2),
+  			url(/assets/fonts/cisco-sans/CiscoSansTTBold.woff);
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cisco Sans";
+  src: url(/assets/fonts/cisco-sans/CiscoSansTTBoldOblique.woff2),
+  			url(/assets/fonts/cisco-sans/CiscoSansTTBoldOblique.woff);
+  font-weight: 700;
+  font-style: italic;
+}
 /**
  * App-wide Styles
  */
@@ -15,10 +41,84 @@ $fa-font-path: '/assets/fonts/font-awesome/';
   padding: 0.2em 0;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
+// Variables
+$palette--bg: #F5F5F5;
+$palette--bg--primary: #425563;
+$palette--accent: #01A982;
+$palette--light-gray: #CCCCCC;
+$palette--black: #333333;
+$palette--gray: #999999;
+$font__weight--bold: 700;
+$box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.12), 0px 2px 2px 0px rgba(0,0,0,0.24);
+$rule: thin solid $palette--light-gray;
+
+// Animation
+
+@mixin quint-ease-out($target: all, $duration: 600ms, $target2: false, $duration2: 400ms) {
+  @if $target2 == false {
+    transition: $target $duration cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  @else {
+    transition: $target $duration cubic-bezier(0.23, 1, 0.32, 1), $target2 $duration2 cubic-bezier(0.23, 1, 0.32, 1);
+  }
+}
+@mixin quint-ease-in($target: all, $duration: 600ms, $target2: false, $duration2: 400ms) {
+  @if $target2 == false {
+    transition: $target $duration cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  }
+  @else {
+    transition: $target $duration cubic-bezier(0.755, 0.05, 0.855, 0.06), $target2 $duration2 cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  }
+}
+.slide {
+  &--off {
+    @include quint-ease-out(transform, 400ms);
+    transform: translateX(0%);
+  }
+  &--on {
+    transform: translateX(100%);
+  }
+}
+
+// Material layout bug fix
+@media screen and (max-width: 960px) {
+  [layout=column] { display: block; }
+}
+[layout-sm=column] { display: block; }
+
+// Main styles
+body {
+  font-family: 'Cisco Sans';
+  font-size: 18px;
+}
+body, .app {
+  background-color: #FFF;
+}
+h2 {
+  font-size: 2em;
+}
+h3 {
+  font-size: 1.3em;
+}
+h4 {
+  font-size: 1.15em;
+  font-weight: $font__weight--bold;
+}
+.md-button {
+  font-weight: $font__weight--bold;
+  margin-left: 0;
+}
+.md-button.md-accent.md-raised,
+.md-button.md-primary.md-raised {
+  color: #FFF;
+}
+p {
+  max-width: 700px;
+}
+.ct-container {
+  padding: 1em;
+  @media screen and (min-width: 768px) {
+    padding: 3em;
   }
 }
 
@@ -26,4 +126,5 @@ $fa-font-path: '/assets/fonts/font-awesome/';
 /* inject:scss */
 @import 'main/main';
 @import '../components/footer/footer';
+@import '../components/header/header';
 /* endinject */

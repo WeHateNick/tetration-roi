@@ -4,19 +4,10 @@ import routing from './main.routes';
 
 export class MainController {
 
-  awesomeThings = [];
-
   /*@ngInject*/
-  constructor($http) {
-    this.$http = $http;
-  }
+  constructor() {}
 
-  $onInit() {
-    this.$http.get('/api/things')
-      .then(response => {
-        this.awesomeThings = response.data;
-      });
-  }
+  $onInit() {}
 }
 
 export default angular.module('tetrationRoiApp.main', [uiRouter])
