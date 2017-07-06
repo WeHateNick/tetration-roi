@@ -102,6 +102,9 @@ h4 {
   font-size: 1.15em;
   font-weight: $font__weight--bold;
 }
+img {
+	max-width: 100%;
+}
 .md-button {
   font-weight: $font__weight--bold;
   margin-left: 0;
