@@ -1,122 +1,21 @@
-md-slider[md-discrete] .md-sign,
-md-slider[md-discrete] .md-sign:after {
-  opacity: 1;
-  -webkit-transform: translate3d(0, 0, 0) scale(1);
-  transform: translate3d(0, 0, 0) scale(1);
-}
-md-slider[disabled][readonly] .md-sign {
-  background-color: $palette--accent;
-  &::after {
-  	border-top-color: $palette--accent;
-  }
-}
-.results-breakdown {
-	margin-top: 4em;
-	&__section {
-		margin-bottom: 4em;
-    &:last-of-type {
-      margin-bottom: 1em;
-    }
-    h3 {
-      margin-bottom: 0.25em;
-    }
-	}
-}
-@mixin slider-thumb($bottom: false) {
-  position: absolute;
-  display: block;
-  height: 30px;
-  width: 30px;
-  margin-left: -15px; // To offset the left property in the element
-  border-radius: 25px;
-  background-color: $palette--accent;
-  top: -22px;
-  &__text {
-    color: #FFF;
-    position: absolute;
-    font-size: 12px;
-    font-weight: $font__weight--bold;
-    text-align: center;
-    top: 7px;
-    width: 20px;
-    left: 50%;
-    margin-left: -10px;
-  }
-  &::before {
-    content: '';
-    position: absolute;
-    display: block;
-    height: 16px;
-    width: 16px;
-    top: 17px;
-    left: 7px;
-    transform: rotate(45deg);
-    background: $palette--accent;
-  }
-}
-@mixin slider-thumb--secondary {
-  background-color: $palette--gray;
-  top: 38px;
-  &::before {
-    top: -3px;
-    left: 7px;
-    transform: rotate(45deg);
-    background: $palette--gray;
-  }
-}
-.hpe-slider {
-  margin-top: 2em;
-  position: relative;
-  md-slider {
-    margin-left: 0;
-    margin-right: 0;
+.ct-input-controls {
+  &__container {
+    margin-bottom: 1em;
+    &:hover .fa {
+      opacity: 1;
+      cursor: pointer;
+    } 
   }
   &__label {
+    font-size: 0.85em;
+  }
+  &__value {
+    text-align: right;
     font-weight: $font__weight--bold;
-    color: $palette--gray;
-    margin-top: 24px;
-    &__max {
-      text-align: right;
-    }
-  }
-  &__score-thumb {
-    @include slider-thumb;
-  }
-  &__benchmark-thumb {
-    @include slider-thumb;
-    @include slider-thumb--secondary;
-  }
-}
-.hpe-cta {
-  position: relative;
-  overflow: hidden;
-  background-color: $palette--bg--secondary;
-  color: #FFF;
-  p.intro-text {
-    font-size: 1.6em;
-  }
-  &__slant {
-    position: absolute;
-    z-index: 1;
-    width: 120%;
-    height: 200px;
-    margin-top: -100px;
-    background-color: white;
-    transform: rotate(2.5deg);
-  }
-  .hpe-container {
-    padding-top: 150px;
-  }
-  .hpe-form {
-    @media screen and (min-width: 768px) {
-      max-width: 500px;
-      margin: auto;
-    }
-    &__title {
-      text-align: center;
-    }
-    &__action {
-      text-align: center;
+    .fa {
+      color: $palette--gray;
+      font-size: 0.85em;
+      opacity: 0;
     }
   }
 }

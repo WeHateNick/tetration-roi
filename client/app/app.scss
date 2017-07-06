@@ -38,7 +38,7 @@ $fa-font-path: '/assets/fonts/font-awesome/';
 }
 
 // Variables
-$palette--bg: #F5F5F5;
+$palette--bg: #FFF;
 $palette--bg--secondary: #F5F5F5;
 $palette--accent: #049FD9;
 $palette--light-gray: #CCCCCC;
@@ -86,13 +86,16 @@ $rule: thin solid $palette--light-gray;
 
 // Main styles
 body {
+  background-color: $palette--bg;
   font-family: 'Cisco Sans';
   font-size: 18px;
   color: $palette--text;
 }
 h1, h2 {
-	font-weight: 400;
-	color: $palette--text;
+  font-weight: 400;
+}
+h1, h2, h3 {
+  color: $palette--text;
 }
 h2 {
   font-size: 2em;
@@ -107,6 +110,9 @@ h4 {
 img {
 	max-width: 100%;
 }
+md-content {
+  background-color: $palette--bg;
+}
 .md-button {
   font-weight: $font__weight--bold;
   margin-left: 0;
@@ -120,6 +126,7 @@ p {
   max-width: 700px;
 }
 .ct-container {
+  background-color: $palette--bg;
   padding: 1em;
   @media screen and (min-width: 768px) {
     padding: 3em;
