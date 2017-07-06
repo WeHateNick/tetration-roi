@@ -1,6 +1,6 @@
 .ct-header {
   box-shadow: $box-shadow;
-  border-bottom: thin solid $rule;
+  border-bottom: $rule;
   &__logo {
     max-width: 65px;
     margin-right: 2em;

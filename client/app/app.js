@@ -11,6 +11,7 @@ import ngMaterial from 'angular-material';
 import {routeConfig} from './app.config';
 
 import main from './main/main.component';
+import results from './results/results.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 import header from '../components/header/ct-header.component';
@@ -22,7 +23,7 @@ import './app.scss';
 
 angular.module('tetrationRoiApp', [ngCookies, ngResource, ngSanitize, 
 	uiRouter, ngAnimate, ngMaterial, constants, util,
-	main, header, footer, horizontalStepper, horizontalStep
+	main, results, header, footer, horizontalStepper, horizontalStep
 ])
   .config(routeConfig);
 

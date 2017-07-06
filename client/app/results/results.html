@@ -1,0 +1,150 @@
+<div layout="row">
+  <md-sidenav
+      class="md-sidenav-left"
+      md-component-id="left"
+      md-is-locked-open="$mdMedia('gt-md')"
+      md-whiteframe="4"
+  >
+    <md-content layout-padding>
+      <md-button ng-click="close()" class="md-primary" hide-gt-md>
+        Close input menu
+      </md-button>
+      <p hide show-gt-md>
+        This sidenav is locked open on your device. To go back to the default behavior,
+        narrow your display.
+      </p>
+    </md-content>
+  </md-sidenav>
+
+  <md-content flex>  
+    <section class="ct-container">
+      <h2>Tetration ROI</h2>
+      <div class="results__highligths" layout="row">
+        <div flex="50">
+          <div class="results__highligths__label">
+            Return on investment
+          </div>
+          <div class="results__highligths__value">
+            216%
+          </div>
+        </div>
+        <div flex="50">
+          <div class="results__highligths__label">
+            Value returned per dollar spent
+          </div>
+          <div class="results__highligths__value">
+            $3.16
+          </div>
+        </div>
+      </div>
+      <div class="results__table" layout="column">
+        <div class="results__table__row" layout="row" layout-align="space-between">
+          <div class="results__table__row__header" flex="50">
+            Total Cisco cost
+          </div>
+          <div class="results__table__row__value" flex="50">
+            $3,140,000
+          </div>
+        </div>
+        <div class="results__table__row" layout="row" layout-align="space-between">
+          <div class="results__table__row__header" flex="50">
+            Estimated value
+          </div>
+          <div class="results__table__row__value" flex="50">
+            $9,925,000
+          </div>
+        </div>
+        <div class="results__table__row" layout="row" layout-align="space-between">
+          <div class="results__table__row__header" flex="50">
+            Payback years modeled
+          </div>
+          <div class="results__table__row__value" flex="50">
+            3
+          </div>
+        </div>
+        <div class="results__table__row" layout="row" layout-align="space-between">
+          <div class="results__table__row__header" flex="50">
+            Net present value (NPV)
+          </div>
+          <div class="results__table__row__value" flex="50">
+            $5,244,466
+          </div>
+        </div>
+        <div class="results__table__row" layout="row" layout-align="space-between">
+          <div class="results__table__row__header" flex="50">
+            Payback month of each year
+          </div>
+          <div class="results__table__row__value" flex="50">
+            4
+          </div>
+        </div>
+        <div class="results__table__row" layout="row" layout-align="space-between">
+          <div class="results__table__row__header" flex="50">
+            Total Cisco cost
+          </div>
+          <div class="results__table__row__value" flex="50">
+            $3,140,000
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <section class="hpe-cta">
+      <div class="hpe-cta__slant"></div>
+      <div class="ct-container">
+        <h2>Download the full PDF report</h2>
+        <p class="intro-text">Chicharrones YOLO before they sold out fanny pack, beard tousled DIY pour-over thundercats blue bottle enamel pin semiotics af tattooed knausgaard.</p>
+        <div layout="row" layout-align="center">
+          <md-card flex flex-gt-sm="60">
+            <md-card-content>
+              <h3 class="hpe-form__title">Register with HPE</h3>
+              <div ng-form="registrationForm" layout="column" class="hpe-form">
+                <md-input-container>
+                  <label>First name</label>
+                  <input type="text" aria-label="First name" ng-model="firstName">
+                </md-input-container>
+                <md-input-container>
+                  <label>Last name</label>
+                  <input type="text" aria-label="Last name" ng-model="lastName">
+                </md-input-container>
+                <md-input-container>
+                  <label>Email</label>
+                  <input type="email" aria-label="Email" ng-model="email">
+                </md-input-container>
+                <div class="hpe-form__action">
+                  <md-button class="md-raised md-accent">Download</md-button>
+                </div>
+              </div>
+            </md-card-content>
+          </md-card>
+        </div>
+      </div>
+    </section> -->
+  </md-content>
+</div>  
+<div id="shadow-form" style="display:none;">
+  <div ng-repeat="result in $ctrl.results">
+    <h3>{{result.name}}</h3>
+    <div>
+      <label>Score</label>
+      <input
+        type="text" 
+        class="regOutput microToolOutput"
+        id="{{result.score.dbEntity}}"
+        data-dbentity="{{result.score.dbEntity}}"
+        data-analyticsname="{{result.score.analyticsName}}" 
+        ng-model="result.score.value"
+        >
+    </div>
+    <div>
+      <label>Average</label>
+      <input 
+        type="text" 
+        class="regOutput microToolInput"
+        id="{{result.average.dbEntity}}"
+        data-dbentity="{{result.average.dbEntity}}"
+        data-analyticsname="{{result.average.analyticsName}}" 
+        ng-model="result.average.value">
+    </div>
+  </div>
+  <button id="msUpdateValues" onclick="msUpdateOutputs()">Update</button>
+</div>

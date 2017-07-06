@@ -39,6 +39,7 @@ $fa-font-path: '/assets/fonts/font-awesome/';
 
 // Variables
 $palette--bg: #F5F5F5;
+$palette--bg--secondary: #F5F5F5;
 $palette--accent: #049FD9;
 $palette--light-gray: #CCCCCC;
 $palette--text: #58585b;
@@ -134,6 +135,7 @@ p {
 // Component styles are injected through gulp
 /* inject:scss */
 @import 'main/main';
+@import 'results/results';
 @import '../components/footer/footer';
 @import '../components/header/header';
 @import '../components/horizontal-stepper/horizontal-stepper';
