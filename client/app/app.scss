@@ -1,6 +1,7 @@
 $fa-font-path: '/assets/fonts/font-awesome/';
 @import '~font-awesome/scss/font-awesome';
 @import '~angular-material/angular-material.min';
+@import '~c3/c3.min';
 
 @font-face {
   font-family: "Cisco Sans";
@@ -87,7 +88,7 @@ $rule: thin solid $palette--light-gray;
 // Main styles
 body {
   background-color: $palette--bg;
-  font-family: 'Cisco Sans';
+  font-family: 'Cisco Sans', 'Verdana';
   font-size: 18px;
   color: $palette--text;
 }

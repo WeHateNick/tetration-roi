@@ -59,30 +59,25 @@ export class ResultsController {
         }
       }
     ];
-    this.readOnly = true;
-    this.getAvgOffset = (score) => {
-      var offset = score * 10;
-      return 'left: ' + offset + '%;';
-    };
     this.$timeout(() => {
       var chart = c3.generate({
         bindto: '#chart',
         data: {
           columns: [
-            ['Compliant security management productivity', 198000],
-            ['SLA management savings', 130000],
-            ['Application dependency mapping efficiencies', 903000],
-            ['Migration and lifecycle management savings', 900000],
-            ['ADM-related rollbacks avoidance', 36000],
-            ['External audit efficiencies', 474000],
-            ['Compliance penalty prevension', 135000],
-            ['ADM-related critical disruptions avoidance', 6687000],
-            ['Security breach prevention', 132000],
+            ['Compliant security management productivity', 198],
+            ['SLA management savings', 130],
+            ['Application dependency mapping efficiencies', 903],
+            // ['Migration and lifecycle management savings', 900000],
+            // ['ADM-related rollbacks avoidance', 36000],
+            // ['External audit efficiencies', 474000],
+            // ['Compliance penalty prevension', 135000],
+            // ['ADM-related critical disruptions avoidance', 6687000],
+            // ['Security breach prevention', 132000],
           ],
           type: 'pie'
         }
       });
-    }, 400);
+    }, 1000);
   }
 }
 ResultsController.$inject = ['$timeout'];
