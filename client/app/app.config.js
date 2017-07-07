@@ -8,9 +8,9 @@ export function routeConfig($urlRouterProvider, $locationProvider, $mdThemingPro
   $locationProvider.html5Mode(true);
 
   var ctAccentMap = $mdThemingProvider.extendPalette('blue', {
-    'A200': '049FD9',
-    // 049FD9
-    'contrastDefaultColor': 'light'
+    A200: '049FD9',
+    A700: '3EB6E3',
+    contrastDefaultColor: 'light'
   });
 
   $mdThemingProvider.definePalette('ctAccentColor', ctAccentMap);
