@@ -4,11 +4,12 @@ import routing from './results.routes';
 import c3 from 'c3';
 
 export class ResultsController {
-  constructor($timeout) {
+  constructor($timeout, $mdDialog) {
     this.$timeout = $timeout;
+    this.$mdDialog = $mdDialog;
   }
   $onInit() {
-    this.results = [
+    this.BasicInputs = [
       {
         name: 'Governance',
         score: {
@@ -89,9 +90,27 @@ export class ResultsController {
         }
       });
     }, 1000);
+    this.showPrompt = function(ev) {
+      // Appending dialog to document.body to cover sidenav in docs app
+      var confirm = this.$mdDialog.prompt()
+        .title('Average number of security zones')
+        .textContent('Per year')
+        .placeholder('400')
+        .ariaLabel('Average number of security zones')
+        .initialValue('400')
+        .targetEvent(ev)
+        .ok('Done')
+        .cancel('Cancel');
+
+      this.$mdDialog.show(confirm).then((result) => {
+        this.status = 'You decided to name your dog ' + result + '.';
+      }, () => {
+        this.status = 'You didn\'t name your dog.';
+      });
+    };
   }
 }
-ResultsController.$inject = ['$timeout'];
+ResultsController.$inject = ['$timeout', '$mdDialog'];
 
 export default angular.module('hpeSecurityApp.results', [uiRouter])
   .config(routing)
