@@ -61,18 +61,29 @@ export class ResultsController {
     ];
     this.$timeout(() => {
       var chart = c3.generate({
-        bindto: '#chart',
+        bindto: '#valueSummary',
         data: {
           columns: [
-            ['Compliant security management productivity', 198],
-            ['SLA management savings', 130],
-            ['Application dependency mapping efficiencies', 903],
-            // ['Migration and lifecycle management savings', 900000],
-            // ['ADM-related rollbacks avoidance', 36000],
-            // ['External audit efficiencies', 474000],
-            // ['Compliance penalty prevension', 135000],
-            // ['ADM-related critical disruptions avoidance', 6687000],
-            // ['Security breach prevention', 132000],
+            ['Reduce costs', 15.4],
+            ['Reduce risk', 83.4],
+            ['Growth revenues', 1.2]
+          ],
+          type: 'pie'
+        }
+      });
+      var chart = c3.generate({
+        bindto: '#valueDistribution',
+        data: {
+          columns: [
+            ['Compliant security management productivity', 198000],
+            ['SLA management savings', 130000],
+            ['Application dependency mapping efficiencies', 903000],
+            ['Migration and lifecycle management savings', 900000],
+            ['ADM-related rollbacks avoidance', 36000],
+            ['External audit efficiencies', 474000],
+            ['Compliance penalty prevension', 135000],
+            ['ADM-related critical disruptions avoidance', 6687000],
+            ['Security breach prevention', 132000],
           ],
           type: 'pie'
         }
