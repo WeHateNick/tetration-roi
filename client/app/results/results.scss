@@ -19,3 +19,30 @@
     }
   }
 }
+.results {
+  &__highlights {
+    text-align: center;
+    &__label {
+      color: $palette--gray;
+      font-size: 1.2em;
+    }
+    &__value {
+      color: $palette--text;
+      font-weight: $font__weight--bold;
+      font-size: 2.4em;
+    }
+  }
+  &__table {
+    &__row {
+      border-bottom: $rule;
+      padding: 0.25em 3em;
+      &__header {
+        color: $palette--gray;
+      }
+      &__value {
+        text-align: right;
+        font-weight: $font__weight--bold;
+      }
+    }
+  }
+}
