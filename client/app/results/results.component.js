@@ -1,8 +1,12 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import routing from './results.routes';
+import c3 from 'c3';
 
 export class ResultsController {
+  constructor($timeout) {
+    this.$timeout = $timeout;
+  }
   $onInit() {
     this.results = [
       {
@@ -60,8 +64,28 @@ export class ResultsController {
       var offset = score * 10;
       return 'left: ' + offset + '%;';
     };
+    this.$timeout(() => {
+      var chart = c3.generate({
+        bindto: '#chart',
+        data: {
+          columns: [
+            ['Compliant security management productivity', 198000],
+            ['SLA management savings', 130000],
+            ['Application dependency mapping efficiencies', 903000],
+            ['Migration and lifecycle management savings', 900000],
+            ['ADM-related rollbacks avoidance', 36000],
+            ['External audit efficiencies', 474000],
+            ['Compliance penalty prevension', 135000],
+            ['ADM-related critical disruptions avoidance', 6687000],
+            ['Security breach prevention', 132000],
+          ],
+          type: 'pie'
+        }
+      });
+    }, 400);
   }
 }
+ResultsController.$inject = ['$timeout'];
 
 export default angular.module('hpeSecurityApp.results', [uiRouter])
   .config(routing)
