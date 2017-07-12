@@ -71,6 +71,7 @@ export class MainController {
       var nextStep = false;
       this.steps.forEach((step, index) => {
         if (step.active && !nextStep) {
+          // If it's the last step
           if (index === this.steps.length -1) {
             this.$state.go('results');
             return;

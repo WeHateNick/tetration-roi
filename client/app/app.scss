@@ -114,6 +114,13 @@ img {
 md-content {
   background-color: $palette--bg;
 }
+[ui-sref],
+[ng-click] {
+  cursor: pointer;
+}
+*:focus {
+  outline: none;
+}
 .md-button {
   font-weight: $font__weight--bold;
   margin-left: 0;
