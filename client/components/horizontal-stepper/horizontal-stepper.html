@@ -1,7 +1,7 @@
 <md-card class="horizontal-stepper" steps="$ctrl.steps" id="stepper">
 	<div class="horizontal-stepper__header" layout="row" layout-align="space-between">
 		<div class="horizontal-stepper__header__step" ng-repeat="step in $ctrl.steps">
-			<div class="horizontal-stepper__label" layout="row">
+			<div class="horizontal-stepper__label" ng-class="{active: step.active}" layout="row">
 			  <div class="horizontal-stepper__label__indicator">
 			    <span ng-if="step.complete" class="fa fa-check"></span>
 			    <span ng-if="!step.complete">{{step.label}}</span>
