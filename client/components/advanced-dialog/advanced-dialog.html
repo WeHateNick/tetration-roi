@@ -1,0 +1,55 @@
+<md-dialog aria-label="Tag rules" flex="50" flex-gt-sm="50">
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <ms-form-header>
+        Tag rules <sup><i class="fa fa-info-circle superscript">
+          <md-tooltip md-direction="right">
+          Auto Assign households with any of the following tags.
+          </md-tooltip>
+        </i></sup>
+      </ms-form-header>
+    </div>
+  </md-toolbar>
+  <md-dialog-content class="modal-form">
+    <ms-dialog-error>
+      An error occurred while trying to modify your tag rules. Please try again or contact <a href="http://mortarstone.com/contact/support">MortarStone support</a>.
+    </ms-dialog-error>
+    <div class="md-dialog-content">
+      <div ng-form="tagRulesForm" novalidate>
+        <div layout="row">
+          <div layout="column" flex flex-gt-sm="40">
+            <h3 class="md-subtitle" flex>Static Tags</h3>
+            <md-checkbox ng-repeat="tag in $scope.staticTags.data" ng-model="tag.selected" layout="row" aria-label="{{tag.name}}" class="ms-checkbox">
+              <span class="word-wrap">
+                <i class="tag--static"></i> {{tag.name}}
+                <!-- <span flex="20" layout-align="right">{{tag.use_count}}</span> -->
+              </span>
+              <md-tooltip md-direction="right">
+                {{tag.description}}
+              </md-tooltip>
+            </md-checkbox>
+          </div>
+          <div layout="column" flex flex-gt-sm="40">
+            <h3 class="md-subtitle" flex>Smart Tags</h3>
+            <md-checkbox ng-repeat="smartTag in $scope.smartTags.data" ng-model="smartTag.selected" aria-label="{{smartTag.name}}" class="ms-checkbox">
+              <span class="word-wrap">
+                <i class="tag--smart"></i> {{smartTag.name}}
+              </span>
+              <md-tooltip md-direction="right">
+                <smart-tag-description tag="smartTag"></smart-tag-description>
+              </md-tooltip>
+            </md-checkbox>
+          </div>
+        </div>
+      </div>
+      <div class="md-dialog-actions" layout="row" layout-align="end center">
+        <md-button ng-click="cancel()">
+          Cancel
+        </md-button>
+        <md-button class="md-raised md-primary" ng-click="submit()" ng-disabled="loading || success">
+          Create Team
+        </md-button>
+      </div>
+    </div>
+  </md-dialog-content>
+</md-dialog>
