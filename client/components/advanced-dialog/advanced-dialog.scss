@@ -1,14 +1,26 @@
-.ct-header {
-  box-shadow: $box-shadow;
-  border-bottom: $rule;
-  &__logo {
-    max-width: 65px;
-    margin-right: 2em;
+.collapsable-panel {
+  &__section {
+    &__header {
+      font-weight: $font__weight--bold;
+      &__label {
+        padding: 0 0.5em;
+      }
+    }
+    &__body {
+      margin: 1em;
+      background-color: $palette--bg--secondary;
+      padding: 1em;
+      max-height: 300px;
+      overflow-y: scroll;
+      border-top: $rule;
+      border-bottom: $rule;
+    }
   }
-  h1 {
-  	margin: 0;
-  }
-  @media screen and (min-width: 768px) {
-    padding: 0.75em 3em;
+}
+.advanced-field {
+  h3 {
+    font-size: 1rem;
+    font-weight: $font__weight--bold;
+    margin-bottom: 0;
   }
 }

@@ -109,19 +109,19 @@
     </md-content>
   </md-sidenav>
 
-<section class="ct-container">
+<section class="ct-container" flex>
   <h2>Advanced inputs</h2>
   <p>Add or remove optional advanced input parameters here</p>
-  <div class="collapsible-panel">
-    <div class="collapsible-panel__section" ng-repeat="section in $ctrl.advanced.sections">
-      <div ng-click="$ctrl.advanced.expand(section)" class="collapsible-panel__section__header" layout="row">
-        <i ng-show="section.expanded" class="fa fa-chevron-down"></i>
-        <i ng-hide="section.expanded" class="fa fa-chevron-right"></i>
-        <span>{{section.label}}</span>
+  <div class="collapsable-panel">
+    <div class="collapsable-panel__section" ng-repeat="section in $ctrl.advanced.sections">
+      <div ng-click="$ctrl.advanced.expand(section)" class="collapsable-panel__section__header" layout="row">
+        <i ng-show="section.expanded" class="fa fa-caret-down"></i>
+        <i ng-hide="section.expanded" class="fa fa-caret-right"></i>
+        <span class="collapsable-panel__section__header__label">{{section.label}}</span>
         <span> ({{section.fields.length}})</span>
       </div>
-      <div class="collapsible-panel__section__body" ng-show="section.expanded">
-        <div class="_question" ng-repeat="field in section.fields">
+      <div class="collapsable-panel__section__body" ng-show="section.expanded">
+        <div class="advanced-field" ng-repeat="field in section.fields">
           <h3>{{field.label}}</h3>
           <md-input-container>
             <label>{{field.placeholder}}</label>
