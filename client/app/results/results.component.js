@@ -15,63 +15,84 @@ export class ResultsController {
       sections: [
         {
           label: 'Operations and gonvernance',
+          expanded: false,
           fields: [
             {
               label: 'Average days for external auditor engagement for IT aspects',
+              placeholder: '# of days',
               value: '',
               dbEntity: 'avgDaysForExternalAuditor'
             },
             {
               label: 'Average days for external auditor engagement for IT aspects',
+              placeholder: '# of days',
               value: '',
               dbEntity: 'avgDaysForExternalAuditor'
             },
             {
               label: 'Average days for external auditor engagement for IT aspects',
+              placeholder: '# of days',
               value: '',
               dbEntity: 'avgDaysForExternalAuditor'
             }
           ]
         }, {
           label: 'Change management',
+          expanded: true,
           fields: [
             {
               label: 'Average days for external auditor engagement for IT aspects',
+              placeholder: '# of days',
               value: '',
               dbEntity: 'avgDaysForExternalAuditor'
             },
             {
               label: 'Average days for external auditor engagement for IT aspects',
+              placeholder: '# of days',
               value: '',
               dbEntity: 'avgDaysForExternalAuditor'
             },
             {
               label: 'Average days for external auditor engagement for IT aspects',
+              placeholder: '# of days',
               value: '',
               dbEntity: 'avgDaysForExternalAuditor'
             }
           ]
         }, {
           label: 'Risk and compliance',
+          expanded: false,
           fields: [
             {
               label: 'Average days for external auditor engagement for IT aspects',
+              placeholder: '# of days',
               value: '',
               dbEntity: 'avgDaysForExternalAuditor'
             },
             {
               label: 'Average days for external auditor engagement for IT aspects',
+              placeholder: '# of days',
               value: '',
               dbEntity: 'avgDaysForExternalAuditor'
             },
             {
               label: 'Average days for external auditor engagement for IT aspects',
+              placeholder: '# of days',
               value: '',
               dbEntity: 'avgDaysForExternalAuditor'
             }
           ]
         }
-      ]
+      ],
+      expand: (selectedSection) => {
+        this.advanced.sections.forEach((section) => {
+          if (section.label === selectedSection.label) {
+            selectedSection.expanded = !selectedSection.expanded;            
+          } else {
+            section.expanded = false;            
+          }
+        });
+      }
     };
 
 

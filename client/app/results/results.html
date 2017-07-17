@@ -113,29 +113,18 @@
   <h2>Advanced inputs</h2>
   <p>Add or remove optional advanced input parameters here</p>
   <div class="collapsible-panel">
-    <div class="collapsible-panel__section">
-      <div class="collapsible-panel__section__header" layout="row">
-        <i class="fa fa-chevron-right"></i> <span>Operations and governance</span> <span>(9)</span>
+    <div class="collapsible-panel__section" ng-repeat="section in $ctrl.advanced.sections">
+      <div ng-click="$ctrl.advanced.expand(section)" class="collapsible-panel__section__header" layout="row">
+        <i ng-show="section.expanded" class="fa fa-chevron-down"></i>
+        <i ng-hide="section.expanded" class="fa fa-chevron-right"></i>
+        <span>{{section.label}}</span>
+        <span> ({{section.fields.length}})</span>
       </div>
-      <div class="collapsible-panel__section__body">
-        <div class="_question">
-          <h3>Average days for external auditor engagement for IT aspects</h3>
+      <div class="collapsible-panel__section__body" ng-show="section.expanded">
+        <div class="_question" ng-repeat="field in section.fields">
+          <h3>{{field.label}}</h3>
           <md-input-container>
-            <label># of days</label>
-            <input type="text" ng-model="$ctrl.foo">
-          </md-input-container>
-        </div>
-        <div class="_question">
-          <h3>Average days for external auditor engagement for IT aspects</h3>
-          <md-input-container>
-            <label># of days</label>
-            <input type="text" ng-model="$ctrl.foo">
-          </md-input-container>
-        </div>
-        <div class="_question">
-          <h3>Average days for external auditor engagement for IT aspects</h3>
-          <md-input-container>
-            <label># of days</label>
+            <label>{{field.placeholder}}</label>
             <input type="text" ng-model="$ctrl.foo">
           </md-input-container>
         </div>
