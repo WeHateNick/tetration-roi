@@ -4,13 +4,13 @@ import routing from './results.routes';
 import c3 from 'c3';
 
 export class ResultsController {
+  /*@ngInject*/
   constructor($timeout, $mdDialog) {
     this.$timeout = $timeout;
     this.$mdDialog = $mdDialog;
   }
   $onInit() {
-
-
+    'ng-inject';
     this.advanced = {
       sections: [
         {
@@ -249,10 +249,16 @@ export class ResultsController {
       });
     };
 
-
-    function advancedFieldsCtrl () {
-
+    var advancedFieldsCtrl = (scope, $mdDialog) => {
+      scope.advanced = this.advanced;
+      scope.cancel = () => {
+        $mdDialog.cancel();
+      };
+      scope.submit = (submission) => {
+        $mdDialog.hide(submission);
+      };
     }
+    advancedFieldsCtrl.$inject = ['scope', '$mdDialog'];
     this.showAdvancedDialog = (ev) => {
       this.$mdDialog.show({
         controller: advancedFieldsCtrl,
@@ -270,7 +276,6 @@ export class ResultsController {
     };
   }
 }
-ResultsController.$inject = ['$timeout', '$mdDialog'];
 
 export default angular.module('hpeSecurityApp.results', [uiRouter])
   .config(routing)

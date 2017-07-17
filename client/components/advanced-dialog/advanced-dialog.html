@@ -1,37 +1,33 @@
-<md-dialog aria-label="Tag rules" flex="50" flex-gt-sm="50" ng-cloak>
-  <md-toolbar>
-  </md-toolbar>
+<md-dialog aria-label="Tag rules" flex="80" flex-gt-sm="50">
   <md-dialog-content>
     <div class="md-dialog-content">
-      <section class="ct-container" flex>
-        <h2>Advanced inputs</h2>
-        <p>Add or remove optional advanced input parameters here</p>
-        <div class="collapsable-panel">
-          <div class="collapsable-panel__section" ng-repeat="section in $ctrl.advanced.sections">
-            <div ng-click="$ctrl.advanced.expand(section)" class="collapsable-panel__section__header" layout="row">
-              <i ng-show="section.expanded" class="fa fa-caret-down"></i>
-              <i ng-hide="section.expanded" class="fa fa-caret-right"></i>
-              <span class="collapsable-panel__section__header__label">{{section.label}}</span>
-              <span> ({{section.fields.length}})</span>
-            </div>
-            <div class="collapsable-panel__section__body" ng-show="section.expanded">
-              <div class="advanced-field" ng-repeat="field in section.fields">
-                <h3>{{field.label}}</h3>
-                <md-input-container>
-                  <label>{{field.placeholder}}</label>
-                  <input type="text" ng-model="$ctrl.foo">
-                </md-input-container>
-              </div>
+      <h2>Advanced inputs</h2>
+      <p>Add or remove optional advanced input parameters here</p>
+      <div class="collapsable-panel">
+        <div class="collapsable-panel__section" ng-repeat="section in advanced.sections">
+          <div ng-click="advanced.expand(section)" class="collapsable-panel__section__header" layout="row">
+            <i ng-show="section.expanded" class="fa fa-caret-down"></i>
+            <i ng-hide="section.expanded" class="fa fa-caret-right"></i>
+            <span class="collapsable-panel__section__header__label">{{section.label}}</span>
+            <span> ({{section.fields.length}})</span>
+          </div>
+          <div class="collapsable-panel__section__body" ng-show="section.expanded">
+            <div class="advanced-field" ng-repeat="field in section.fields">
+              <h3>{{field.label}}</h3>
+              <md-input-container>
+                <label>{{field.placeholder}}</label>
+                <input type="text" ng-model="foo">
+              </md-input-container>
             </div>
           </div>
         </div>
-      </section>
+      </div>
       <div class="md-dialog-actions" layout="row" layout-align="end center">
         <md-button ng-click="cancel()">
           Cancel
         </md-button>
         <md-button class="md-raised md-primary" ng-click="submit()" ng-disabled="loading || success">
-          Create Team
+          Submit
         </md-button>
       </div>
     </div>
