@@ -9,7 +9,73 @@ export class ResultsController {
     this.$mdDialog = $mdDialog;
   }
   $onInit() {
-    this.BasicInputs = [
+
+
+    this.advanced = {
+      sections: [
+        {
+          label: 'Operations and gonvernance',
+          fields: [
+            {
+              label: 'Average days for external auditor engagement for IT aspects',
+              value: '',
+              dbEntity: 'avgDaysForExternalAuditor'
+            },
+            {
+              label: 'Average days for external auditor engagement for IT aspects',
+              value: '',
+              dbEntity: 'avgDaysForExternalAuditor'
+            },
+            {
+              label: 'Average days for external auditor engagement for IT aspects',
+              value: '',
+              dbEntity: 'avgDaysForExternalAuditor'
+            }
+          ]
+        }, {
+          label: 'Change management',
+          fields: [
+            {
+              label: 'Average days for external auditor engagement for IT aspects',
+              value: '',
+              dbEntity: 'avgDaysForExternalAuditor'
+            },
+            {
+              label: 'Average days for external auditor engagement for IT aspects',
+              value: '',
+              dbEntity: 'avgDaysForExternalAuditor'
+            },
+            {
+              label: 'Average days for external auditor engagement for IT aspects',
+              value: '',
+              dbEntity: 'avgDaysForExternalAuditor'
+            }
+          ]
+        }, {
+          label: 'Risk and compliance',
+          fields: [
+            {
+              label: 'Average days for external auditor engagement for IT aspects',
+              value: '',
+              dbEntity: 'avgDaysForExternalAuditor'
+            },
+            {
+              label: 'Average days for external auditor engagement for IT aspects',
+              value: '',
+              dbEntity: 'avgDaysForExternalAuditor'
+            },
+            {
+              label: 'Average days for external auditor engagement for IT aspects',
+              value: '',
+              dbEntity: 'avgDaysForExternalAuditor'
+            }
+          ]
+        }
+      ]
+    };
+
+
+    this.basicInputs = [
       {
         name: 'Governance',
         score: {
