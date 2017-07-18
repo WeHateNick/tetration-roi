@@ -1,12 +1,12 @@
 <div layout="row">
   <md-sidenav
     class="md-sidenav-left"
-    md-component-id="left"
+    md-component-id="sidenav"
     md-is-locked-open="$mdMedia('gt-sm')"
     md-whiteframe="4"
   >
     <md-content layout-padding>
-      <md-button ng-click="close()" class="md-primary" hide-gt-sm>
+      <md-button ng-click="$ctrl.closeSidenav()" class="md-primary" hide-gt-sm>
         Close input menu
       </md-button>
       <div class="ct-input-controls">
@@ -108,9 +108,14 @@
       </div>
     </md-content>
   </md-sidenav>
-<md-content flex>  
+<md-content flex>
+  <md-content layout-padding>
+    <md-button ng-click="$ctrl.openSidenav()" class="md-accent" hide-gt-sm>
+      <span><i class="fa fa-navicon"></i> Edit inputs</span>
+    </md-button>
+  </md-content> 
   <section class="ct-container">
-    <div layout="row" layout-align="space-between center">
+    <div layout-gt-sm="row" layout-align-gt-sm="space-between center" layout="column" layout-align="center center" class="results__header">
       <h2>Tetration ROI</h2>
       <div><md-button class="md-raised">Download <i class="fa fa-download"></i></md-button></div>
     </div>

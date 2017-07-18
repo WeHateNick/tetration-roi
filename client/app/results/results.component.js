@@ -5,12 +5,19 @@ import c3 from 'c3';
 
 export class ResultsController {
   /*@ngInject*/
-  constructor($timeout, $mdDialog) {
+  constructor($timeout, $mdDialog, $mdSidenav) {
     this.$timeout = $timeout;
     this.$mdDialog = $mdDialog;
+    this.$mdSidenav = $mdSidenav;
   }
   $onInit() {
-    'ng-inject';
+
+    this.openSidenav = () => {
+      this.$mdSidenav('sidenav').open();
+    };
+    this.closeSidenav = () => {
+      this.$mdSidenav('sidenav').close();
+    };
     this.advanced = {
       sections: [
         {

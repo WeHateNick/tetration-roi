@@ -23,6 +23,12 @@ md-sidenav, md-sidenav md-content {
   }
 }
 .results {
+  &__header {
+    @include layout--lg('invert') {
+      text-align: center;
+      margin-bottom: 2em;
+    }
+  }
   &__highlights {
     text-align: center;
     &__label {
@@ -39,6 +45,9 @@ md-sidenav, md-sidenav md-content {
     &__row {
       border-bottom: $rule;
       padding: 0.25em 3em;
+      @include layout--sm {
+        padding: 1em;
+      }
       &__header {
         color: $palette--gray;
       }
