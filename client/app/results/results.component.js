@@ -2,6 +2,7 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import routing from './results.routes';
 import c3 from 'c3';
+import advancedFieldsTpl from '../../components/advanced-dialog/advanced-dialog.html';
 
 export class ResultsController {
   /*@ngInject*/
@@ -268,7 +269,7 @@ export class ResultsController {
     this.showAdvancedDialog = (ev) => {
       this.$mdDialog.show({
         controller: advancedFieldsCtrl,
-        templateUrl: '/components/advanced-dialog/advanced-dialog.html',
+        template: advancedFieldsTpl,
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
