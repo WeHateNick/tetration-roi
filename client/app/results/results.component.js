@@ -11,7 +11,6 @@ export class ResultsController {
     this.$mdSidenav = $mdSidenav;
   }
   $onInit() {
-
     this.openSidenav = () => {
       this.$mdSidenav('sidenav').open();
     };
