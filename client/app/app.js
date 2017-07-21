@@ -18,7 +18,7 @@ import header from '../components/header/ct-header.component';
 import footer from '../components/footer/footer.component';
 import horizontalStepper from '../components/horizontal-stepper/horizontal-stepper.component';
 import horizontalStep from '../components/horizontal-stepper/horizontal-step/horizontal-step.component';
-import fields from '../components/fields/fields.component.js';
+import fields from '../components/fields/fields.service.js';
 
 import './app.scss';
 

@@ -10,12 +10,14 @@ export class HorizontalStepperComponent {
 	scrollToTop() {
 	  this.$location.hash('stepper');
 	  this.$anchorScroll();
+	  this.$location.hash('');
 	};
 	goToStep(selectedStep) {
 	  this.steps.forEach((step) => {
 	    step.active = false;
 	  });
 	  selectedStep.active = true;
+	  this.scrollToTop()
 	}
 	nextStep() {
 	  let nextStep = false;

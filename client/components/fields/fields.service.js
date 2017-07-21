@@ -6,7 +6,7 @@ class FieldsService {
       operations: [{
         question: 'What is your average number of security zones?',
         label: 'foo',
-        placeholder: 'Security zones',
+        placeholder: '# of security zones',
         dbEntity: 'ctField1',
         analyticsName: 'Field 1'
       }],
