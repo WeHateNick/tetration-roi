@@ -288,7 +288,6 @@ export default angular.module('hpeSecurityApp.results', [uiRouter])
   .config(routing)
   .component('results', {
     template: require('./results.html'),
-    controller: ResultsController,
-    controllerAs: '$ctrl'
+    controller: ResultsController
   })
   .name;
