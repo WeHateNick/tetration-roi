@@ -1,4 +1,17 @@
-<header class="ct-header" layout="column" layout-gt-sm="row" layout-align="start center" layout-align="center">
-  <a href="http://www.cisco.com"><img src="assets/images/cisco-logo.svg" alt="Cisco logo" class="ct-header__logo" ui-sref="main"></a>
-  <h1 ui-sref="main">Cisco Tetration Analytics</h1>
+<header class="ct-header" layout="column" layout-gt-sm="row" layout-align="start center" layout-align="space-between">
+  <div flex layout="row">
+  	<a href="http://www.cisco.com"><img src="assets/images/cisco-logo.svg" alt="Cisco logo" class="ct-header__logo" ui-sref="main"></a>
+    <h1 ui-sref="main">Cisco Tetration Analytics</h1>
+  </div>
+  <div flex class="ct-header__info">
+  	<i class="fa fa-question-circle" ng-click="showInfo = !showInfo">
+  		<md-card class="ct-header__info__content" ng-show="showInfo">
+  			<md-card-content>
+	  			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet fermentum nulla, eget efficitur sem placerat non. Nullam mattis, velit non ultrices euismod, ipsum risus interdum tellus, nec sollicitudin lectus elit sed nibh. Sed malesuada ultrices leo, at ultricies leo finibus id. Sed vitae vestibulum dui, eu elementum sem. Sed tellus ex, pharetra eu nisl vel, malesuada pellentesque quam.</p>
+					<p>Maecenas non magna sed erat lobortis lacinia. Suspendisse vel elementum turpis, quis fermentum metus. Quisque porta libero justo, vitae vehicula elit porta at. Integer accumsan mattis libero, sed aliquam nibh tristique posuere. Morbi ac nulla leo. Aliquam leo purus, volutpat ac eleifend ac, auctor id justo. Donec lobortis lobortis risus, sed laoreet lacus fermentum in. Sed ornare consectetur lectus, a laoreet metus scelerisque vitae.</p> 
+					<p>Nam iaculis, dui sed efficitur facilisis, mi nunc congue enim, egestas elementum felis quam non augue. Quisque interdum lacinia tincidunt. Cras libero erat, pretium non turpis vitae, egestas tempus massa. Sed ac eleifend sapien.</p>
+  			</md-card-content>
+  		</md-card>
+  	</i>
+  </div>
 </header>
