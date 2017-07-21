@@ -3,7 +3,12 @@ import uiRouter from 'angular-ui-router';
 import routing from './main.routes';
 
 export class MainController {
+  // @ngInject
+  constructor(fields) {
+    this.fields = fields;
+  }
   $onInit() {
+    console.log(this.fields.getFields);
     this.steps = [
       {
         label: '1',

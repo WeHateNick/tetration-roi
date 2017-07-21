@@ -269,7 +269,7 @@ export class ResultsController {
     this.showAdvancedDialog = (ev) => {
       this.$mdDialog.show({
         controller: advancedFieldsCtrl,
-        template: advancedFieldsTpl,
+        template: require('../../components/advanced-dialog/advanced-dialog.html'),
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,

@@ -13,7 +13,7 @@
 <section class="ct-container">
   <h2>Begin the assessment</h2>
   <horizontal-stepper steps="$ctrl.steps">
-    <horizontal-step ng-repeat="step in $ctrl.steps" ng-show="step.active" active="step.active">
+    <horizontal-step ng-repeat="step in $ctrl.steps" ng-show="step.active" active="step.active" active-step="step">
       <div layout="column">
         <div class="questions">
           <div class="question" ng-repeat="field in step.fields">

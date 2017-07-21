@@ -18,12 +18,13 @@ import header from '../components/header/ct-header.component';
 import footer from '../components/footer/footer.component';
 import horizontalStepper from '../components/horizontal-stepper/horizontal-stepper.component';
 import horizontalStep from '../components/horizontal-stepper/horizontal-step/horizontal-step.component';
+import fields from '../components/fields/fields.component.js';
 
 import './app.scss';
 
 angular.module('tetrationRoiApp', [ngCookies, ngResource, ngSanitize, 
 	uiRouter, ngAnimate, ngMaterial, constants, util,
-	main, results, header, footer, horizontalStepper, horizontalStep
+	main, results, header, footer, horizontalStepper, horizontalStep, fields
 ])
   .config(routeConfig);
 
