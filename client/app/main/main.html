@@ -38,17 +38,6 @@
             </md-input-container>
           </div>
         </div>
-        <div class="step__actions" layout="row" layout-align="end">
-          <md-button class="md-raised" ng-hide="$first" ng-click="$ctrl.previousStep();" aria-label="continue">
-            Back
-          </md-button>
-          <md-button class="md-accent md-raised" ng-disabled="!$ctrl.isSectionIncomplete(step.questions);" ng-click="$ctrl.nextStep();" aria-label="continue">
-            Continue
-          </md-button>
-        </div>
-        <div layout="row" layout-align="end" class="step__actions">
-          <em ng-show="!$ctrl.isSectionIncomplete(step.questions);"><i class="fa fa-info-circle"></i> Complete all questions in this section to continue</em>
-        </div>
       </div>
     </horizontal-step>
   </horizontal-stepper>

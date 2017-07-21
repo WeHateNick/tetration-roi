@@ -1,17 +1,29 @@
 import angular from 'angular';
 
 export class HorizontalStepperComponent {
+	// @ngInject
+	constructor($state, $location, $anchorScroll) {
+		this.$state = $state;
+		this.$location = $location;
+		this.$anchorScroll = $anchorScroll;
+	}
 	$onInit() {
+		var scrollToTop = () => {
+		  this.$location.hash('stepper');
+		  this.$anchorScroll();
+		};
 		this.goToStep = (selectedStep) => {
 		  this.steps.forEach((step) => {
 		    step.active = false;
 		  });
 		  selectedStep.active = true;
 		}
+
 		this.nextStep = () => {
 		  var nextStep = false;
 		  this.steps.forEach((step, index) => {
 		    if (step.active && !nextStep) {
+		      // If it's the last step
 		      if (index === this.steps.length -1) {
 		        this.$state.go('results');
 		        return;

@@ -3,16 +3,7 @@ import uiRouter from 'angular-ui-router';
 import routing from './main.routes';
 
 export class MainController {
-  constructor($state, $location, $anchorScroll) {
-    this.$state = $state;
-    this.$location = $location;
-    this.$anchorScroll = $anchorScroll;
-  }
   $onInit() {
-    var scrollToTop = () => {
-      this.$location.hash('stepper');
-      this.$anchorScroll();
-    };
     this.steps = [
       {
         label: '1',
@@ -67,44 +58,6 @@ export class MainController {
         }]
       }
     ];
-    this.nextStep = () => {
-      var nextStep = false;
-      this.steps.forEach((step, index) => {
-        if (step.active && !nextStep) {
-          // If it's the last step
-          if (index === this.steps.length -1) {
-            this.$state.go('results');
-            return;
-          }
-          step.active = false;
-          step.complete = true;
-          nextStep = index + 1;
-          this.steps[nextStep].active = true;
-        }
-      })
-      scrollToTop();
-    };
-    this.previousStep = () => {
-      var previousStep = false;
-      this.steps.forEach((step, index) => {
-        if (step.active && !previousStep) {
-          step.active = false;
-          previousStep = index - 1;
-          this.steps[previousStep].active = true;
-          this.steps[previousStep].complete = false;
-        }
-      })
-      scrollToTop();
-    };
-    this.isSectionIncomplete = (questions) => {
-      var isIncomplete = false;
-      questions.forEach((question) => {
-        if (!question.value) {
-          isIncomplete = true;
-        }
-      });
-      return isIncomplete;
-    };
   }
 }
 
