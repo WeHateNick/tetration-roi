@@ -12,12 +12,6 @@ export class ResultsController {
     this.$mdSidenav = $mdSidenav;
   }
   $onInit() {
-    this.openSidenav = () => {
-      this.$mdSidenav('sidenav').open();
-    };
-    this.closeSidenav = () => {
-      this.$mdSidenav('sidenav').close();
-    };
     this.advanced = {
       sections: [
         {
@@ -155,8 +149,6 @@ export class ResultsController {
         });
       }
     };
-
-
     this.basicInputs = [
       {
         name: 'Governance',
@@ -238,25 +230,7 @@ export class ResultsController {
         }
       });
     }, 1000);
-    this.showPrompt = (ev) => {
-      // Appending dialog to document.body to cover sidenav in docs app
-      var confirm = this.$mdDialog.prompt()
-        .title('Average number of security zones')
-        .textContent('Per year')
-        .placeholder('400')
-        .ariaLabel('Average number of security zones')
-        .initialValue('400')
-        .targetEvent(ev)
-        .ok('Done')
-        .cancel('Cancel');
-      this.$mdDialog.show(confirm).then((result) => {
-        this.status = 'You decided to name your dog ' + result + '.';
-      }, () => {
-        this.status = 'You didn\'t name your dog.';
-      });
-    };
-
-    var advancedFieldsCtrl = (scope, $mdDialog) => {
+    this.advancedFieldsDialogCtrl = (scope, $mdDialog) => {
       scope.advanced = this.advanced;
       scope.cancel = () => {
         $mdDialog.cancel();
@@ -265,23 +239,46 @@ export class ResultsController {
         $mdDialog.hide(submission);
       };
     }
-    advancedFieldsCtrl.$inject = ['scope', '$mdDialog'];
-    this.showAdvancedDialog = (ev) => {
-      this.$mdDialog.show({
-        controller: advancedFieldsCtrl,
-        template: require('../../components/advanced-dialog/advanced-dialog.html'),
-        parent: angular.element(document.body),
-        targetEvent: ev,
-        clickOutsideToClose:true,
-        fullscreen: false // Only for -xs, -sm breakpoints.
-      })
-      .then(function (answer) {
-        // this.status = 'You said the information was "' + answer + '".';
-      }, function() {
-        // this.status = 'You cancelled the dialog.';
-      });
-    };
+    this.advancedFieldsDialogCtrl.$inject = ['scope', '$mdDialog'];
   }
+  openSidenav() {
+    this.$mdSidenav('sidenav').open();
+  }
+  closeSidenav () {
+    this.$mdSidenav('sidenav').close();
+  }
+  showPrompt(ev) {
+    // Appending dialog to document.body to cover sidenav in docs app
+    var confirm = this.$mdDialog.prompt()
+      .title('Average number of security zones')
+      .textContent('Per year')
+      .placeholder('400')
+      .ariaLabel('Average number of security zones')
+      .initialValue('400')
+      .targetEvent(ev)
+      .ok('Done')
+      .cancel('Cancel');
+    this.$mdDialog.show(confirm).then((result) => {
+      this.status = 'You decided to name your dog ' + result + '.';
+    }, () => {
+      this.status = 'You didn\'t name your dog.';
+    });
+  };
+  showAdvancedDialog(ev) {
+    this.$mdDialog.show({
+      controller: this.advancedFieldsDialogCtrl,
+      template: require('../../components/advanced-dialog/advanced-dialog.html'),
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose:true,
+      fullscreen: false // Only for -xs, -sm breakpoints.
+    })
+    .then(function (answer) {
+      // this.status = 'You said the information was "' + answer + '".';
+    }, function() {
+      // this.status = 'You cancelled the dialog.';
+    });
+  };
 }
 
 export default angular.module('hpeSecurityApp.results', [uiRouter])
