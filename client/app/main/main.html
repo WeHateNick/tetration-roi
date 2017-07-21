@@ -1,12 +1,12 @@
 <section class="ct-container">
   <div layout-gt-sm="row" layout="column">
-    <div flex="70">
+    <div flex flex-gt-sm="70">
       <h2>Calculate your cost benefits</h2>
       <p>Donec gravida condimentum sapien, tincidunt posuere ante mollis sit amet.</p>
       <p>Etiam auctor leo metus, quis gravida nisi auctor ut. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In venenatis, leo gravida faucibus semper, risus leo suscipit lacus, vitae placerat elit risus non elit.</p>
     </div>
-    <div flex="30">
-      <img class="image--hang-right" src="assets/images/cost-benefits.png" alt="Costs and benefits">
+    <div flex flex-gt-sm="30">
+      <img src="assets/images/cost-benefits.png" alt="Costs and benefits">
     </div>
   </div>
 </section>
@@ -19,8 +19,7 @@
           <div class="question" ng-repeat="field in step.fields">
             <p>{{field.question}}</p>
             <md-input-container layout="row">
-              <label>{{field.placeholder}}</label>
-              <input type="text" ng-model="field.value" flex flex-gt-sm="50">
+              <input type="text" ng-model="field.value" flex flex-gt-sm="50" ng-attr-placeholder="{{field.placeholder}}" ng-attr-aria-label="{{field.placeholder}}">
             </md-input-container>
           </div>
         </div>

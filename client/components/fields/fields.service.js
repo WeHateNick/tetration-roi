@@ -17,14 +17,14 @@ class FieldsService {
         dbEntity: 'ctField2',
         analyticsName: 'Field 2'
       }, {
-        question: 'Annual changes in the network or security environment will you need?',
-        label: 'foo',
+        question: 'How many annual changes in the network or security environment will you need?',
+        label: 'Annual changes in the network or security environment',
         placeholder: '# of required changes',
         dbEntity: 'ctField3',
         analyticsName: 'Field 3'
       }, {
-        question: 'Number of applications impacted during a single change',
-        label: 'foo',
+        question: 'How many applications are impacted during a single change?',
+        label: 'Number of applications impacted during a single change',
         placeholder: '# of applications',
         dbEntity: 'ctField4',
         analyticsName: 'Field 4'
