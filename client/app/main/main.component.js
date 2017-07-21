@@ -11,16 +11,12 @@ export class MainController {
         complete: false,
         active: true,
         description: 'Etiam eget est eu ligula iaculis varius. Donec nec dui facilisis lectus malesuada vehicula eu a neque. Sed vel lacus non erat bibendum accumsan. Suspendisse potenti. Phasellus in turpis sit amet neque feugiat pellentesque. Nulla varius mi ut nisl tincidunt, sit amet faucibus augue volutpat.',
-        questions: [{
-          number: 1,
-          content: 'We have completed an inventory of our software portfolio (including in-house development, COTS, third-party development, etc.)',
-          dbEntity: 'hpeQuestion1',
-          analyticsName: 'Question 1'
-        }, {
-          number: 2,
-          content: 'Applications in our portoflio have been classified according to data type',
-          dbEntity: 'hpeQuestion2',
-          analyticsName: 'Question 2'
+        fields: [{
+          question: 'What is your average number of security zones?',
+          label: 'foo',
+          placeholder: 'Security zones',
+          dbEntity: 'ctField1',
+          analyticsName: 'Field 1'
         }]
       }, {
         label: '2',
@@ -28,16 +24,24 @@ export class MainController {
         complete: false,
         active: false,
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra odio vel nisl maximus pretium. Proin felis lectus, posuere eget neque in, facilisis maximus lectus. Nulla molestie nunc nibh, et commodo turpis lobortis nec.',
-        questions: [{
-          number: 9,
-          content: 'Secure frameworks and design features are considered during the design process',
-          dbEntity: 'hpeQuestion9',
-          analyticsName: 'Question 9'
+        fields: [{
+          question: 'How many applications will you annually migrate per security zone?',
+          label: 'foo',
+          placeholder: '# of applications',
+          dbEntity: 'ctField2',
+          analyticsName: 'Field 2'
         }, {
-          number: 10,
-          content: 'We have a documented process track use of open source components and verify their security',
-          dbEntity: 'hpeQuestion10',
-          analyticsName: 'Question 10'
+          question: 'Annual changes in the network or security environment will you need?',
+          label: 'foo',
+          placeholder: '# of required changes',
+          dbEntity: 'ctField3',
+          analyticsName: 'Field 3'
+        }, {
+          question: 'Number of applications impacted during a single change',
+          label: 'foo',
+          placeholder: '# of applications',
+          dbEntity: 'ctField4',
+          analyticsName: 'Field 4'
         }],
       }, {
         label: '3',
@@ -45,16 +49,18 @@ export class MainController {
         complete: false,
         active: false,
         description: 'Nulla eleifend, nunc eget mattis tristique, libero nibh porttitor lectus, a semper nisl nisi vitae sem. Morbi convallis congue lobortis. Vestibulum id tempus velit. Maecenas at semper dolor, non sollicitudin tortor.',
-        questions: [{
-          number: 13,
-          content: 'We conduct regular secure code reviews',
-          dbEntity: 'hpeQuestion13',
-          analyticsName: 'Question 13'
+        fields: [{
+          question: 'What is your annual frequency of external audits?',
+          label: 'foo',
+          placeholder: '# of external audits',
+          dbEntity: 'ctField5',
+          analyticsName: 'Field 5'
         }, {
-          number: 14,
-          content: 'We conduct secure design reviews for new projects',
-          dbEntity: 'hpeQuestion14',
-          analyticsName: 'Question 14'
+          question: 'How many annual security breaches do you experience?',
+          label: 'foo',
+          placeholder: '# of breaches',
+          dbEntity: 'ctField6',
+          analyticsName: 'Field 6'
         }]
       }
     ];
