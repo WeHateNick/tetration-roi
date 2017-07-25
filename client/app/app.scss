@@ -181,6 +181,9 @@ md-content {
 .md-button.md-accent.md-raised,
 .md-button.md-primary.md-raised {
   color: #FFF;
+  .fa {
+    color: #FFF;
+  }
 }
 p {
   max-width: 700px;
