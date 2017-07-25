@@ -4,12 +4,22 @@
     <h1 ui-sref="main" class="ct-header__title">Cisco Tetration Analytics</h1>
   </div>
   <div flex class="ct-header__info">
-  	<i class="fa fa-question-circle" ng-click="showInfo = !showInfo">
+  	<i class="fa fa-question-circle" ng-click="showInfo = !showInfo"></i>
   		<md-card class="ct-header__info__content" ng-show="showInfo">
   			<md-card-content>
-	  			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam aliquet fermentum nulla, eget efficitur sem placerat non. Nullam mattis, velit non ultrices euismod, ipsum risus interdum tellus, nec sollicitudin lectus elit sed nibh. Sed malesuada ultrices leo, at ultricies leo finibus id. Sed vitae vestibulum dui, eu elementum sem. Sed tellus ex, pharetra eu nisl vel, malesuada pellentesque quam.</p>
-					<p>Maecenas non magna sed erat lobortis lacinia. Suspendisse vel elementum turpis, quis fermentum metus. Quisque porta libero justo, vitae vehicula elit porta at. Integer accumsan mattis libero, sed aliquam nibh tristique posuere. Morbi ac nulla leo. Aliquam leo purus, volutpat ac eleifend ac, auctor id justo. Donec lobortis lobortis risus, sed laoreet lacus fermentum in. Sed ornare consectetur lectus, a laoreet metus scelerisque vitae.</p> 
-					<p>Nam iaculis, dui sed efficitur facilisis, mi nunc congue enim, egestas elementum felis quam non augue. Quisque interdum lacinia tincidunt. Cras libero erat, pretium non turpis vitae, egestas tempus massa. Sed ac eleifend sapien.</p>
+          <div layout="row" layout-align="end"><i class="fa fa-close" ng-click="showInfo = false"></i></div>
+          <p>
+            This tool is compatible with the following browsers and operating systems:
+          </p>
+          <ul>
+            <li>Internet Explorer 11 & Edge (Windows)</li>
+            <li>Google Chrome (Windows, OSX, and iOS)</li>
+            <li>Mozilla FireFox (Windows, OSX)</li>
+            <li>Safari (Windows, OSX, iOS)</li>
+          </ul>
+          <p>
+            Please let us know how to improve this tool and any other feedback you would like to share to <a href="mailto:tetration@cisco.com">tetration@cisco.com</a>.
+          </p>
   			</md-card-content>
   		</md-card>
   	</i>

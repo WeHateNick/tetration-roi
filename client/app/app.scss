@@ -136,7 +136,7 @@ $screen--lg: 960px;
 [layout-sm=column] { display: block; }
 
 // Main styles
-body {
+html, body {
   background-color: $palette--bg;
   font-family: 'Cisco Sans', 'Verdana';
   font-size: 16px;
@@ -157,6 +157,9 @@ h3 {
 h4 {
   font-size: 1.15em;
   font-weight: $font__weight--bold;
+}
+.fa {
+  color: $palette--gray;
 }
 img {
 	max-width: 100%;
