@@ -137,6 +137,83 @@ export class ResultsController {
               dbEntity: 'avgDaysForExternalAuditor'
             }
           ]
+        }, {
+          label: 'Tetration pricing',
+          expanded: false,
+          fields: [
+            {
+              label: 'Average days for external auditor engagement for IT aspects',
+              placeholder: '# of days',
+              value: '',
+              dbEntity: 'avgDaysForExternalAuditor'
+            },
+            {
+              label: 'Average days for external auditor engagement for IT aspects',
+              placeholder: '# of days',
+              value: '',
+              dbEntity: 'avgDaysForExternalAuditor'
+            },
+            {
+              label: 'Average days for external auditor engagement for IT aspects',
+              placeholder: '# of days',
+              value: '',
+              dbEntity: 'avgDaysForExternalAuditor'
+            },
+            {
+              label: 'Average days for external auditor engagement for IT aspects',
+              placeholder: '# of days',
+              value: '',
+              dbEntity: 'avgDaysForExternalAuditor'
+            },
+            {
+              label: 'Average days for external auditor engagement for IT aspects',
+              placeholder: '# of days',
+              value: '',
+              dbEntity: 'avgDaysForExternalAuditor'
+            },
+            {
+              label: 'Average days for external auditor engagement for IT aspects',
+              placeholder: '# of days',
+              value: '',
+              dbEntity: 'avgDaysForExternalAuditor'
+            },
+            {
+              label: 'Average days for external auditor engagement for IT aspects',
+              placeholder: '# of days',
+              value: '',
+              dbEntity: 'avgDaysForExternalAuditor'
+            },
+            {
+              label: 'Average days for external auditor engagement for IT aspects',
+              placeholder: '# of days',
+              value: '',
+              dbEntity: 'avgDaysForExternalAuditor'
+            },
+            {
+              label: 'Average days for external auditor engagement for IT aspects',
+              placeholder: '# of days',
+              value: '',
+              dbEntity: 'avgDaysForExternalAuditor'
+            },
+            {
+              label: 'Average days for external auditor engagement for IT aspects',
+              placeholder: '# of days',
+              value: '',
+              dbEntity: 'avgDaysForExternalAuditor'
+            },
+            {
+              label: 'Average days for external auditor engagement for IT aspects',
+              placeholder: '# of days',
+              value: '',
+              dbEntity: 'avgDaysForExternalAuditor'
+            },
+            {
+              label: 'Average days for external auditor engagement for IT aspects',
+              placeholder: '# of days',
+              value: '',
+              dbEntity: 'avgDaysForExternalAuditor'
+            }
+          ]
         }
       ],
       expand: (selectedSection) => {
