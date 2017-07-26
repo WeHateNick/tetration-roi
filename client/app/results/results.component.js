@@ -94,10 +94,6 @@ export class ResultsController {
         });
       }
     };
-    this.hasValues = (section) => {
-      var isPopulated = section.fields.some((field) => {return !!field.value});
-      return isPopulated;
-    }
     this.$timeout(() => {
       var chart = c3.generate({
         bindto: '#valueSummary',
@@ -138,6 +134,10 @@ export class ResultsController {
       };
     }
     this.advancedFieldsDialogCtrl.$inject = ['scope', '$mdDialog'];
+  }
+  hasValues(section) {
+    var isPopulated = section.fields.some((field) => {return !!field.value});
+    return isPopulated;
   }
   openSidenav() {
     this.$mdSidenav('sidenav').open();
