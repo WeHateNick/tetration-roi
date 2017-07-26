@@ -13,11 +13,9 @@ export class ResultsController {
     this.fields = FieldsService;
   }
   $onInit() {
-    // this.basicFields = [];
-    // this.basicFields.push(this.fields.basic.operations);
-    // this.basicFields.push(this.fields.basic.operations);
-    // this.basicFields.push(this.fields.basic.operations);
-    // this.basicFields.push(this.fields.basic.operations);
+    this.basicFields = this.fields.basicSections.reduce((allFields, section) => {
+      return allFields.concat(section.fields);
+    }, []);
     this.advanced = {
       sections: this.fields.advancedSections,
       expand: (selectedSection) => {
@@ -92,9 +90,7 @@ export class ResultsController {
       .ok('Done')
       .cancel('Cancel');
     this.$mdDialog.show(confirm).then((result) => {
-      this.status = 'You decided to name your dog ' + result + '.';
-    }, () => {
-      this.status = 'You didn\'t name your dog.';
+      field.value = parseInt(result);
     });
   };
   showAdvancedDialog(ev) {
@@ -103,13 +99,7 @@ export class ResultsController {
       template: require('../../components/advanced-dialog/advanced-dialog.html'),
       parent: angular.element(document.body),
       targetEvent: ev,
-      clickOutsideToClose:true,
-      fullscreen: false // Only for -xs, -sm breakpoints.
-    })
-    .then(function (answer) {
-      // this.status = 'You said the information was "' + answer + '".';
-    }, function() {
-      // this.status = 'You cancelled the dialog.';
+      clickOutsideToClose:true
     });
   };
 }

@@ -2,15 +2,18 @@ import angular from 'angular';
 
 class FieldsService {
   constructor () {
-    this.basic = {
-      operations: [{
+    this.basicSections = [{
+      label: 'Operations and Government',
+      fields: [{
         question: 'What is your average number of security zones?',
         label: 'Average number of security zones',
         placeholder: '# of security zones',
         dbEntity: 'ctField1',
         analyticsName: 'Field 1'
-      }],
-      changeManagement: [{
+      }]
+    }, {
+      label: 'Change management',
+      fields: [{
         question: 'How many applications will you annually migrate per security zone?',
         label: 'Annual applications to migrate per security zone',
         placeholder: '# of applications',
@@ -29,7 +32,9 @@ class FieldsService {
         dbEntity: 'ctField4',
         analyticsName: 'Field 4'
       }],
-      riskAndCompliance: [{
+    }, {
+      label: 'Risk and compliance',
+      fields: [{
         question: 'What is your annual frequency of external audits?',
         label: 'foo',
         placeholder: '# of external audits',
@@ -47,18 +52,8 @@ class FieldsService {
         placeholder: '# of breaches',
         dbEntity: 'ctField7',
         analyticsName: 'Field 7'
-      }]
-    };
-        //   expand: (selectedSection) => {
-        //     this.advanced.sections.forEach((section) => {
-        //       if (section.label === selectedSection.label) {
-        //         selectedSection.expanded = !selectedSection.expanded;            
-        //       } else {
-        //         section.expanded = false;            
-        //       }
-        //     });
-        //   }
-        // };
+      }],
+    }];
     this.advancedSections = [
       {
         label: 'Operations and governance',
