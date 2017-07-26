@@ -78,28 +78,15 @@
       </div>
       <div class="ct-input-controls">
         <h3>Advanced inputs</h3>
-        <div layout="row" layout-align="space-between" class="ct-input-controls__container">
-          <div flex="70" class="ct-input-controls__label">
-            Average number of security zones
-          </div>
-          <div flex="70" class="ct-input-controls__value">
-            400 <i class="fa fa-pencil" ng-click="$ctrl.showPrompt($event)"></i>
-          </div>
-        </div>
-        <div layout="row" layout-align="space-between" class="ct-input-controls__container">
-          <div flex="70" class="ct-input-controls__label">
-            Average number of security zones
-          </div>
-          <div flex="70" class="ct-input-controls__value">
-            400 <i class="fa fa-pencil" ng-click="$ctrl.showPrompt($event)"></i>
-          </div>
-        </div>
-        <div layout="row" layout-align="space-between" class="ct-input-controls__container">
-          <div flex="70" class="ct-input-controls__label">
-            Apps per security zone
-          </div>
-          <div flex="70" class="ct-input-controls__value">
-            1 <i class="fa fa-pencil" ng-click="$ctrl.showPrompt($event)"></i>
+        <div ng-repeat="section in $ctrl.advanced.sections">
+          <h4 ng-show="$ctrl.hasValues(section)">{{section.label}}</h4>
+          <div ng-repeat="field in section.fields" layout="row" layout-align="space-between" class="ct-input-controls__container" ng-show="field.value">
+            <div flex="70" class="ct-input-controls__label">
+              {{field.label}}
+            </div>
+            <div flex="70" class="ct-input-controls__value">
+              {{field.value}} <i class="fa fa-pencil" ng-click="$ctrl.showPrompt($event)"></i>
+            </div>
           </div>
         </div>
         <div>

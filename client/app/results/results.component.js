@@ -13,36 +13,6 @@ export class ResultsController {
     this.advFields = FieldsService.advanced;
   }
   $onInit() {
-    this.advanced = {
-      sections: [
-        {
-          label: 'Operations and governance',
-          expanded: false,
-          fields: this.advFields.operations
-        }, {
-          label: 'Change management',
-          expanded: false,
-          fields: this.advFields.changeManagement
-        }, {
-          label: 'Risk and compliance',
-          expanded: false,
-          fields: this.advFields.riskAndCompliance
-        }, {
-          label: 'Tetration pricing',
-          expanded: false,
-          fields: this.advFields.pricing
-        }
-      ],
-      expand: (selectedSection) => {
-        this.advanced.sections.forEach((section) => {
-          if (section.label === selectedSection.label) {
-            selectedSection.expanded = !selectedSection.expanded;            
-          } else {
-            section.expanded = false;            
-          }
-        });
-      }
-    };
     this.basicInputs = [
       {
         name: 'Governance',
@@ -94,6 +64,40 @@ export class ResultsController {
         }
       }
     ];
+    this.advanced = {
+      sections: [
+        {
+          label: 'Operations and governance',
+          expanded: false,
+          fields: this.advFields.operations
+        }, {
+          label: 'Change management',
+          expanded: false,
+          fields: this.advFields.changeManagement
+        }, {
+          label: 'Risk and compliance',
+          expanded: false,
+          fields: this.advFields.riskAndCompliance
+        }, {
+          label: 'Tetration pricing',
+          expanded: false,
+          fields: this.advFields.pricing
+        }
+      ],
+      expand: (selectedSection) => {
+        this.advanced.sections.forEach((section) => {
+          if (section.label === selectedSection.label) {
+            selectedSection.expanded = !selectedSection.expanded;            
+          } else {
+            section.expanded = false;            
+          }
+        });
+      }
+    };
+    this.hasValues = (section) => {
+      var isPopulated = section.fields.some((field) => {return !!field.value});
+      return isPopulated;
+    }
     this.$timeout(() => {
       var chart = c3.generate({
         bindto: '#valueSummary',
