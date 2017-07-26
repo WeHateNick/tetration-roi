@@ -6,10 +6,11 @@ import advancedFieldsTpl from '../../components/advanced-dialog/advanced-dialog.
 
 export class ResultsController {
   /*@ngInject*/
-  constructor($timeout, $mdDialog, $mdSidenav) {
+  constructor($timeout, $mdDialog, $mdSidenav, FieldsService) {
     this.$timeout = $timeout;
     this.$mdDialog = $mdDialog;
     this.$mdSidenav = $mdSidenav;
+    this.advFields = FieldsService.advanced;
   }
   $onInit() {
     this.advanced = {
@@ -17,203 +18,19 @@ export class ResultsController {
         {
           label: 'Operations and governance',
           expanded: false,
-          fields: [
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            }
-          ]
+          fields: this.advFields.operations
         }, {
           label: 'Change management',
           expanded: false,
-          fields: [
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            }
-          ]
+          fields: this.advFields.changeManagement
         }, {
           label: 'Risk and compliance',
           expanded: false,
-          fields: [
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            }
-          ]
+          fields: this.advFields.riskAndCompliance
         }, {
           label: 'Tetration pricing',
           expanded: false,
-          fields: [
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            },
-            {
-              label: 'Average days for external auditor engagement for IT aspects',
-              placeholder: '# of days',
-              value: '',
-              dbEntity: 'avgDaysForExternalAuditor'
-            }
-          ]
+          fields: this.advFields.pricing
         }
       ],
       expand: (selectedSection) => {
