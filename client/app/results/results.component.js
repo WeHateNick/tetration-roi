@@ -10,80 +10,16 @@ export class ResultsController {
     this.$timeout = $timeout;
     this.$mdDialog = $mdDialog;
     this.$mdSidenav = $mdSidenav;
-    this.advFields = FieldsService.advanced;
+    this.fields = FieldsService;
   }
   $onInit() {
-    this.basicInputs = [
-      {
-        name: 'Governance',
-        score: {
-          dbEntity: 'governanceScore',
-          analyticsName: 'Governance Score',
-          value: 0
-        },
-        average: {
-          dbEntity: 'governanceAvg',
-          analyticsName: 'Governance Average Score',
-          value: 0
-        }
-      }, {
-        name: 'Construction',
-        score: {
-          dbEntity: 'constructionScore',
-          analyticsName: 'Construction Score',
-          value: 0
-        },
-        average: {
-          dbEntity: 'constructionAvg',
-          analyticsName: 'Construction Average Score',
-          value: 0
-        }
-      }, {
-        name: 'Verification',
-        score: {
-          dbEntity: 'verificationScore',
-          analyticsName: 'Verification Score',
-          value: 0
-        },
-        average: {
-          dbEntity: 'verificationAvg',
-          analyticsName: 'Verification Average Score',
-          value: 0
-        }
-      }, {
-        name: 'Deployment',
-        score: {
-          dbEntity: 'deploymentScore',
-          analyticsName: 'Deployment Score',
-          value: 0
-        },
-        average: {
-          dbEntity: 'deploymentAvg',
-          analyticsName: 'Deployment Average Score',
-          value: 0
-        }
-      }
-    ];
+    // this.basicFields = [];
+    // this.basicFields.push(this.fields.basic.operations);
+    // this.basicFields.push(this.fields.basic.operations);
+    // this.basicFields.push(this.fields.basic.operations);
+    // this.basicFields.push(this.fields.basic.operations);
     this.advanced = {
-      sections: [
-        {
-          label: 'Operations and governance',
-          expanded: false,
-          fields: this.advFields.operations
-        }, {
-          label: 'Change management',
-          expanded: false,
-          fields: this.advFields.changeManagement
-        }, {
-          label: 'Risk and compliance',
-          expanded: false,
-          fields: this.advFields.riskAndCompliance
-        }, {
-          label: 'Tetration pricing',
-          expanded: false,
-          fields: this.advFields.pricing
-        }
-      ],
+      sections: this.fields.advancedSections,
       expand: (selectedSection) => {
         this.advanced.sections.forEach((section) => {
           if (section.label === selectedSection.label) {
@@ -145,14 +81,13 @@ export class ResultsController {
   closeSidenav () {
     this.$mdSidenav('sidenav').close();
   }
-  showPrompt(ev) {
+  showPrompt(ev, field) {
     // Appending dialog to document.body to cover sidenav in docs app
     var confirm = this.$mdDialog.prompt()
-      .title('Average number of security zones')
-      .textContent('Per year')
-      .placeholder('400')
-      .ariaLabel('Average number of security zones')
-      .initialValue('400')
+      .title(field.label)
+      .placeholder(field.placeholder)
+      .ariaLabel(field.label)
+      .initialValue(field.value)
       .targetEvent(ev)
       .ok('Done')
       .cancel('Cancel');

@@ -11,68 +11,12 @@
       </md-button>
       <div class="ct-input-controls">
         <h3>Inputs</h3>
-        <div layout="row" layout-align="space-between" class="ct-input-controls__container">
+        <div layout="row" layout-align="space-between" class="ct-input-controls__container" ng-repeat="field in $ctrl.basicFields">
           <div flex="70" class="ct-input-controls__label">
-            Average number of security zones
+            {{field.label}}
           </div>
           <div flex="70" class="ct-input-controls__value">
-            400 <i class="fa fa-pencil" ng-click="$ctrl.showPrompt($event)"></i>
-          </div>
-        </div>
-        <div layout="row" layout-align="space-between" class="ct-input-controls__container">
-          <div flex="70" class="ct-input-controls__label">
-            Average number of security zones
-          </div>
-          <div flex="70" class="ct-input-controls__value">
-            400 <i class="fa fa-pencil" ng-click="$ctrl.showPrompt($event)"></i>
-          </div>
-        </div>
-        <div layout="row" layout-align="space-between" class="ct-input-controls__container">
-          <div flex="70" class="ct-input-controls__label">
-            Apps per security zone
-          </div>
-          <div flex="70" class="ct-input-controls__value">
-            1 <i class="fa fa-pencil" ng-click="$ctrl.showPrompt($event)"></i>
-          </div>
-        </div>
-        <div layout="row" layout-align="space-between" class="ct-input-controls__container">
-          <div flex="70" class="ct-input-controls__label">
-            Annual required changes
-          </div>
-          <div flex="70" class="ct-input-controls__value">
-            100 <i class="fa fa-pencil" ng-click="$ctrl.showPrompt($event)"></i>
-          </div>
-        </div>
-        <div layout="row" layout-align="space-between" class="ct-input-controls__container">
-          <div flex="70" class="ct-input-controls__label">
-            Apps impacted per change
-          </div>
-          <div flex="70" class="ct-input-controls__value">
-            50 <i class="fa fa-pencil" ng-click="$ctrl.showPrompt($event)"></i>
-          </div>
-        </div>
-        <div layout="row" layout-align="space-between" class="ct-input-controls__container">
-          <div flex="70" class="ct-input-controls__label">
-            External audit frequency
-          </div>
-          <div flex="70" class="ct-input-controls__value">
-            1 <i class="fa fa-pencil" ng-click="$ctrl.showPrompt($event)"></i>
-          </div>
-        </div>
-        <div layout="row" layout-align="space-between" class="ct-input-controls__container">
-          <div flex="70" class="ct-input-controls__label">
-            Annual cost of non-compliance
-          </div>
-          <div flex="70" class="ct-input-controls__value">
-            $500k <i class="fa fa-pencil" ng-click="$ctrl.showPrompt($event)"></i>
-          </div>
-        </div>
-        <div layout="row" layout-align="space-between" class="ct-input-controls__container">
-          <div flex="70" class="ct-input-controls__label">
-            Annual security breaches
-          </div>
-          <div flex="70" class="ct-input-controls__value">
-            1 <i class="fa fa-pencil" ng-click="$ctrl.showPrompt($event)"></i>
+            {{field.value}} <i class="fa fa-pencil" ng-click="$ctrl.showPrompt($event)"></i>
           </div>
         </div>
       </div>
@@ -85,7 +29,7 @@
               {{field.label}}
             </div>
             <div flex="70" class="ct-input-controls__value">
-              {{field.value}} <i class="fa fa-pencil" ng-click="$ctrl.showPrompt($event)"></i>
+              {{field.value}} <i class="fa fa-pencil" ng-click="$ctrl.showPrompt($event, field)"></i>
             </div>
           </div>
         </div>

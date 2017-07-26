@@ -20,7 +20,7 @@
           <div class="question" ng-repeat="field in step.fields">
             <p>{{field.question}}</p>
             <md-input-container layout="row">
-              <input type="text" ng-model="field.value" flex flex-gt-sm="50" ng-attr-placeholder="{{field.placeholder}}" ng-attr-aria-label="{{field.placeholder}}">
+              <input type="number" ng-model="field.value" flex flex-gt-sm="50" ng-attr-placeholder="{{field.placeholder}}" ng-attr-aria-label="{{field.placeholder}}">
             </md-input-container>
           </div>
         </div>
