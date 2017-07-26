@@ -136,7 +136,7 @@ export class ResultsController {
     this.advancedFieldsDialogCtrl.$inject = ['scope', '$mdDialog'];
   }
   hasValues(section) {
-    var isPopulated = section.fields.some((field) => {return !!field.value});
+    var isPopulated = section.fields.find((field) => {return !!field.value});
     return isPopulated;
   }
   openSidenav() {
