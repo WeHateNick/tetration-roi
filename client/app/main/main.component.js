@@ -4,10 +4,10 @@ import routing from './main.routes';
 
 export class MainController {
   /*@ngInject*/
-  constructor(FieldsService) {
+  constructor (FieldsService) {
     this.fieldService = FieldsService;
   }
-  $onInit() {
+  $onInit () {
     this.steps = [
       {
         label: '1',

@@ -6,13 +6,13 @@ import advancedFieldsTpl from '../../components/advanced-dialog/advanced-dialog.
 
 export class ResultsController {
   /*@ngInject*/
-  constructor($timeout, $mdDialog, $mdSidenav, FieldsService) {
+  constructor ($timeout, $mdDialog, $mdSidenav, FieldsService) {
     this.$timeout = $timeout;
     this.$mdDialog = $mdDialog;
     this.$mdSidenav = $mdSidenav;
     this.fieldService = FieldsService;
   }
-  $onInit() {
+  $onInit () {
     this.basicFields = this.fieldService.basicSections.reduce((allFields, section) => {
       return allFields.concat(section.fields);
     }, []);
@@ -69,17 +69,17 @@ export class ResultsController {
     }
     this.advancedFieldsDialogCtrl.$inject = ['scope', '$mdDialog'];
   }
-  hasValues(section) {
-    var isPopulated = section.fields.find((field) => {return !!field.value});
+  hasValues (section) {
+    var isPopulated = section.fields.find( (field) => !!field.value );
     return isPopulated;
   }
-  openSidenav() {
+  openSidenav () {
     this.$mdSidenav('sidenav').open();
   }
   closeSidenav () {
     this.$mdSidenav('sidenav').close();
   }
-  showPrompt(ev, field) {
+  showPrompt (ev, field) {
     // Appending dialog to document.body to cover sidenav in docs app
     var confirm = this.$mdDialog.prompt()
       .title(field.label)
@@ -93,7 +93,7 @@ export class ResultsController {
       field.value = parseInt(result);
     });
   };
-  showAdvancedDialog(ev) {
+  showAdvancedDialog (ev) {
     this.$mdDialog.show({
       controller: this.advancedFieldsDialogCtrl,
       template: require('../../components/advanced-dialog/advanced-dialog.html'),

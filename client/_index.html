@@ -63,36 +63,8 @@
     <footer></footer>
 
     <!-- Mainstay scripts -->
-    <script>
-        function msUpdateInputs() {
-            var mainCtrl = document.getElementById('mainCtrl');
-            if (mainCtrl) {
-                var scope = angular.element(document.getElementById('mainCtrl')).scope();
-                if (typeof (scope) != "undefined" && typeof (scope.$ctrl) != "undefined") {
-                    scope.$ctrl.steps.forEach((step) => {
-                        step.questions.forEach((question) => {
-                            question.value = document.getElementById(question.dbEntity).value;
-                        });
-                    });
-                }
-            }
-        }
-        function msUpdateOutputs() {
-            var shadowOutput = document.getElementById('shadow-output');
-            if (shadowOutput) {
-                var scope = angular.element(document.getElementById('resultsController')).scope();
-                if (typeof (scope) != "undefined" && typeof (scope.$ctrl) != "undefined") {
-                    scope.$ctrl.results.forEach((section) => {
-                        section.score.value = document.getElementById(section.score.dbEntity).value;
-                        section.average.value = document.getElementById(section.average.dbEntity).value;
-                    });
-                }
-            }
-        }
-    </script>
-
-    <script type="text/javascript" src="js/mainstay/main.js"></script>
+    <!-- <script type="text/javascript" src="js/mainstay/main.js"></script>
     <script type="text/javascript" src="js/mainstay/data.js"></script>
-    <script type="text/javascript" src="js/mainstay/currency.js"></script>
+    <script type="text/javascript" src="js/mainstay/currency.js"></script> -->
 </body>
 </html>
