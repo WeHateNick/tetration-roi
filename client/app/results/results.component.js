@@ -10,14 +10,14 @@ export class ResultsController {
     this.$timeout = $timeout;
     this.$mdDialog = $mdDialog;
     this.$mdSidenav = $mdSidenav;
-    this.fields = FieldsService;
+    this.fieldService = FieldsService;
   }
   $onInit() {
-    this.basicFields = this.fields.basicSections.reduce((allFields, section) => {
+    this.basicFields = this.fieldService.basicSections.reduce((allFields, section) => {
       return allFields.concat(section.fields);
     }, []);
     this.advanced = {
-      sections: this.fields.advancedSections,
+      sections: this.fieldService.advancedSections,
       expand: (selectedSection) => {
         this.advanced.sections.forEach((section) => {
           if (section.label === selectedSection.label) {

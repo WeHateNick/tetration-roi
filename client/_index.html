@@ -4,9 +4,41 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <base href="/">
+    <!-- <base href="/go/cisco/tetration/"> -->
     <title>Angular Full-Stack Generator</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <!-- <script type="text/javascript" src="js/mainstay/jquery-1.9.1.js">
+    </script>
+    <script type="text/javascript" src="js/mainstay/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/mainstay/jquery.json-2.3.min.js"></script>
+    <script type="text/javascript" src="js/mainstay/accounting.js"></script> -->
+    <style>
+      @font-face {
+        font-family: "Cisco Sans";
+        src: url(/assets/fonts/cisco-sans/CiscoSansTT-Light.otf);
+        font-weight: 400;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Cisco Sans";
+        src: url(/assets/fonts/cisco-sans/CiscoSansTT-Oblique.otf);
+        font-weight: 400;
+        font-style: italic;
+      }
+      @font-face {
+        font-family: "Cisco Sans";
+        src: url(/assets/fonts/cisco-sans/CiscoSansTT-Bold.otf);
+        font-weight: 700;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Cisco Sans";
+        src: url(/assets/fonts/cisco-sans/CiscoSansTT-BoldOblique.otf);
+        font-weight: 700;
+        font-style: italic;
+      }
+    </style>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 </head>
 <body>
@@ -25,8 +57,42 @@
       ga('send', 'pageview');
     </script>
 
+    <input type="hidden" class="isAngular" value="true" />
     <ct-header></ct-header>
     <div ui-view="" autoscroll="true"></div>
     <footer></footer>
+
+    <!-- Mainstay scripts -->
+    <script>
+        function msUpdateInputs() {
+            var mainCtrl = document.getElementById('mainCtrl');
+            if (mainCtrl) {
+                var scope = angular.element(document.getElementById('mainCtrl')).scope();
+                if (typeof (scope) != "undefined" && typeof (scope.$ctrl) != "undefined") {
+                    scope.$ctrl.steps.forEach((step) => {
+                        step.questions.forEach((question) => {
+                            question.value = document.getElementById(question.dbEntity).value;
+                        });
+                    });
+                }
+            }
+        }
+        function msUpdateOutputs() {
+            var shadowOutput = document.getElementById('shadow-output');
+            if (shadowOutput) {
+                var scope = angular.element(document.getElementById('resultsController')).scope();
+                if (typeof (scope) != "undefined" && typeof (scope.$ctrl) != "undefined") {
+                    scope.$ctrl.results.forEach((section) => {
+                        section.score.value = document.getElementById(section.score.dbEntity).value;
+                        section.average.value = document.getElementById(section.average.dbEntity).value;
+                    });
+                }
+            }
+        }
+    </script>
+
+    <script type="text/javascript" src="js/mainstay/main.js"></script>
+    <script type="text/javascript" src="js/mainstay/data.js"></script>
+    <script type="text/javascript" src="js/mainstay/currency.js"></script>
 </body>
 </html>
