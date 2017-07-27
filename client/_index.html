@@ -63,6 +63,28 @@
     <footer></footer>
 
     <!-- Mainstay scripts -->
+
+    <script>
+      function msUpdateInputs () {
+        let ctrl = document.getElementById('mainCtrl') || document.getElementById('resultsCtrl');
+        if (ctrl) {
+          let scope = angular.element(ctrl).scope();
+          if (scope && scope.$ctrl) {
+            let mergeSections = (mergedFields, section) => mergedFields.concat(section.fields);
+            let getFieldShadowValues = (field) => {
+              field.value = document.getElementById(field.dbEntity).value;
+            };
+            let fieldService = scope.$ctrl.fieldService;
+            let basicFields = fieldService.basicSections.reduce(mergeSections, []);
+            let advancedFields = fieldService.advancedSections.reduce(mergeSections, []);
+
+            basicFields.forEach(getFieldShadowValues);
+            advancedFields.forEach(getFieldShadowValues);
+          }
+        }
+      }
+    </script>
+
     <!-- <script type="text/javascript" src="js/mainstay/main.js"></script>
     <script type="text/javascript" src="js/mainstay/data.js"></script>
     <script type="text/javascript" src="js/mainstay/currency.js"></script> -->
