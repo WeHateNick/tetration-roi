@@ -83,6 +83,18 @@
           }
         }
       }
+      function msUpdateOutputs() {
+        let shadowOutput = document.getElementById('shadow-output');
+        if (shadowOutput) {
+          let scope = angular.element(shadowOutput).scope();
+          if (scope && scope.$ctrl) {
+            scope.$ctrl.results.forEach((result) => {
+              result.score.value = document.getElementById(result.score.dbEntity).value;
+              result.average.value = document.getElementById(result.average.dbEntity).value;
+            });
+          }
+        }
+      }
     </script>
 
     <!-- <script type="text/javascript" src="js/mainstay/main.js"></script>
