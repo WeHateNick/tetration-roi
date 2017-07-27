@@ -20,6 +20,10 @@
   &__info {
     text-align: right;
     position: relative;
+    .fa-question-circle {
+      color: $palette--accent;
+      font-size: 1.4em;
+    }
     &__content {
       position: absolute;
       z-index: 1;

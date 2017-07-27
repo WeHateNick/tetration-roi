@@ -4,7 +4,9 @@
     <h1 ui-sref="main" class="ct-header__title">Tetration Analytics ROI Tool</h1>
   </div>
   <div flex class="ct-header__info">
-  	<i class="fa fa-question-circle" ng-click="showInfo = !showInfo"></i>
+  	<i class="fa fa-question-circle" ng-click="showInfo = !showInfo">
+     <md-tooltip>Help</md-tooltip> 
+    </i>
   		<md-card class="ct-header__info__content" ng-show="showInfo">
   			<md-card-content>
           <div layout="row" layout-align="end"><i class="fa fa-close" ng-click="showInfo = false"></i></div>
