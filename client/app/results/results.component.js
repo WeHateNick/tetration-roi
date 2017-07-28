@@ -34,7 +34,7 @@ export class ResultsController {
         bindto: '#valueSummary',
         data: {
           columns: [
-            ['Reduce costs', ],
+            ['Reduce costs', 16.4],
             ['Reduce risk', 83.6]
           ],
           type: 'pie'
