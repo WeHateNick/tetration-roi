@@ -8,7 +8,7 @@ import ngSanitize from 'angular-sanitize';
 import uiRouter from 'angular-ui-router';
 // import ngMessages from 'angular-messages';
 import ngMaterial from 'angular-material';
-import {routeConfig} from './app.config';
+import {routeConfig, mainstayConfig} from './app.config';
 
 import main from './main/main.component';
 import results from './results/results.component';

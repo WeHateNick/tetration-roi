@@ -111,14 +111,6 @@
           4
         </div>
       </div>
-      <div class="results__table__row" layout="row" layout-align="space-between">
-        <div class="results__table__row__header" flex="50">
-          Total Cisco cost
-        </div>
-        <div class="results__table__row__value" flex="50">
-          $3,140,000
-        </div>
-      </div>
     </div>
   </section>
   <section class="ct-container">
@@ -140,31 +132,4 @@
     </div>
   </section>
   </md-content>
-</md-content>  
-<div id="shadow-form" style="display:none;">
-  <div ng-repeat="result in $ctrl.results">
-    <h3>{{result.name}}</h3>
-    <div>
-      <label>Score</label>
-      <input
-      type="text" 
-      class="regOutput microToolOutput"
-      id="{{result.score.dbEntity}}"
-      data-dbentity="{{result.score.dbEntity}}"
-      data-analyticsname="{{result.score.analyticsName}}" 
-      ng-model="result.score.value"
-      >
-    </div>
-    <div>
-      <label>Average</label>
-      <input 
-      type="text" 
-      class="regOutput microToolInput"
-      id="{{result.average.dbEntity}}"
-      data-dbentity="{{result.average.dbEntity}}"
-      data-analyticsname="{{result.average.analyticsName}}" 
-      ng-model="result.average.value">
-    </div>
-  </div>
-  <button id="msUpdateValues" onclick="msUpdateOutputs()">Update</button>
-</div>
+</md-content>

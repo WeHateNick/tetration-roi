@@ -33,9 +33,8 @@ export class ResultsController {
         bindto: '#valueSummary',
         data: {
           columns: [
-            ['Reduce costs', 15.4],
-            ['Reduce risk', 83.4],
-            ['Growth revenues', 1.2]
+            ['Reduce costs', 16.4],
+            ['Reduce risk', 83.6]
           ],
           type: 'pie'
         }
@@ -91,6 +90,7 @@ export class ResultsController {
       .cancel('Cancel');
     this.$mdDialog.show(confirm).then((result) => {
       field.value = parseInt(result);
+      $('#' + field.dbEntity).val(result).trigger('change');
     });
   };
   showAdvancedDialog (ev) {

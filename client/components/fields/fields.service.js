@@ -32,7 +32,7 @@ class FieldsService {
       label: 'Risk and compliance',
       fields: [{
         question: 'What is your annual frequency of external audits?',
-        label: 'foo',
+        label: 'Frequency of external audits',
         placeholder: '# of external audits',
         dbEntity: 'b5'
       }, {

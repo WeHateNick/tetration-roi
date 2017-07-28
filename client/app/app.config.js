@@ -19,3 +19,9 @@ export function routeConfig($urlRouterProvider, $locationProvider, $mdThemingPro
     .primaryPalette('grey')
     .accentPalette('ctAccentColor');
 }
+
+export function mainstayConfig ($rootScope) {
+  'ngInject';
+
+  $rootScope.mainstayConfig = microTool.util;
+}

@@ -258,6 +258,81 @@
           <input type="text" class="regInput microToolInput" id="a40" data-dbentity="a40">
         </div>
       </div>
+      <div id="shadow-output">
+        <h3>Outputs</h3>
+        <div>
+          <label>Return on investment</label>
+          <input type="text" class="regInput microToolInput" id="returnOnInvestment" data-dbentity="returnOnInvestment">
+        </div>
+        <div>
+          <label>Value returned per dollar spent</label>
+          <input type="text" class="regInput microToolInput" id="valueReturned" data-dbentity="valueReturned">
+        </div>
+        <div>
+          <label>Total Cisco cost</label>
+          <input type="text" class="regInput microToolInput" id="ciscoCost" data-dbentity="ciscoCost">
+        </div>
+        <div>
+          <label>Estimated value</label>
+          <input type="text" class="regInput microToolInput" id="estimatedValue" data-dbentity="estimatedValue">
+        </div>
+        <div>
+          <label>Payback years modeled</label>
+          <input type="text" class="regInput microToolInput" id="paybackYears" data-dbentity="paybackYears">
+        </div>
+        <div>
+          <label>Net present value (NPV)</label>
+          <input type="text" class="regInput microToolInput" id="netPresentValue" data-dbentity="netPresentValue">
+        </div>
+        <div>
+          <label>Payback month</label>
+          <input type="text" class="regInput microToolInput" id="paybackMonth" data-dbentity="paybackMonth">
+        </div>
+        <div>
+          <label>Reduced costs</label>
+          <input type="text" class="regInput microToolInput" id="valueSummary1" data-dbentity="valueSummary1">
+        </div>
+        <div>
+          <label>Reduced risks</label>
+          <input type="text" class="regInput microToolInput" id="valueSummary2" data-dbentity="valueSummary2">
+        </div>
+        <div>
+          <label>Compliant security management productivity</label>
+          <input type="text" class="regInput microToolInput" id="valueDistribution1" data-dbentity="valueDistribution1">
+        </div>
+        <div>
+          <label>SLA management savings</label>
+          <input type="text" class="regInput microToolInput" id="valueDistribution2" data-dbentity="valueDistribution2">
+        </div>
+        <div>
+          <label>Application dependency mapping efficiencies</label>
+          <input type="text" class="regInput microToolInput" id="valueDistribution3" data-dbentity="valueDistribution3">
+        </div>
+        <div>
+          <label>Migration and lifecycle management savings</label>
+          <input type="text" class="regInput microToolInput" id="valueDistribution4" data-dbentity="valueDistribution4">
+        </div>
+        <div>
+          <label>ADM-related rollbacks avoidance</label>
+          <input type="text" class="regInput microToolInput" id="valueDistribution5" data-dbentity="valueDistribution5">
+        </div>
+        <div>
+          <label>External audit efficiencies</label>
+          <input type="text" class="regInput microToolInput" id="valueDistribution6" data-dbentity="valueDistribution6">
+        </div>
+        <div>
+          <label>Compliance penalty prevension</label>
+          <input type="text" class="regInput microToolInput" id="valueDistribution7" data-dbentity="valueDistribution7">
+        </div>
+        <div>
+          <label>ADM-related critical disruptions avoidance</label>
+          <input type="text" class="regInput microToolInput" id="valueDistribution8" data-dbentity="valueDistribution8">
+        </div>
+        <div>
+          <label>Security breach prevention</label>
+          <input type="text" class="regInput microToolInput" id="valueDistribution9" data-dbentity="valueDistribution9">
+        </div>
+      </div>
     </div>
 
     <!-- Mainstay scripts -->
@@ -278,6 +353,7 @@
 
             basicFields.forEach(getFieldShadowValues);
             advancedFields.forEach(getFieldShadowValues);
+            scope.$digest();
           }
         }
       }
