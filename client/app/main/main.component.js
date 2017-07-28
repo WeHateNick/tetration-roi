@@ -30,6 +30,10 @@ export class MainController {
       }
     ];
   }
+  updateShadow(field) {
+    let el = document.getElementById(field.dbEntity);
+    angular.element(el).val(field.value).triggerHandler('click');
+  }
 }
 
 export default angular.module('tetrationRoiApp.main', [uiRouter])

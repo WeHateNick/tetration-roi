@@ -62,11 +62,15 @@ export class ResultsController {
       scope.cancel = () => {
         $mdDialog.cancel();
       };
-      scope.submit = (submission) => {
-        $mdDialog.hide(submission);
+      scope.submit = (field) => {
+        $mdDialog.hide();
       };
     }
     this.advancedFieldsDialogCtrl.$inject = ['scope', '$mdDialog'];
+  }
+  updateShadow(field) {
+    let el = document.getElementById(field.dbEntity);
+    angular.element(el).val(field.value).triggerHandler('click');
   }
   hasValues (section) {
     var isPopulated = section.fields.find( (field) => !!field.value );
@@ -90,7 +94,8 @@ export class ResultsController {
       .cancel('Cancel');
     this.$mdDialog.show(confirm).then((result) => {
       field.value = parseInt(result);
-      $('#' + field.dbEntity).val(result).trigger('change');
+      let el = document.getElementById(field.dbEntity);
+      angular.element(el).val(result).triggerHandler('click');
     });
   };
   showAdvancedDialog (ev) {
