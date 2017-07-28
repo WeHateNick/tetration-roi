@@ -6,7 +6,6 @@ import ngCookies from 'angular-cookies';
 import ngResource from 'angular-resource';
 import ngSanitize from 'angular-sanitize';
 import uiRouter from 'angular-ui-router';
-// import ngMessages from 'angular-messages';
 import ngMaterial from 'angular-material';
 import {routeConfig, mainstayConfig} from './app.config';
 
@@ -27,6 +26,7 @@ angular.module('tetrationRoiApp', [ngCookies, ngResource, ngSanitize,
 	main, results, header, footer, horizontalStepper, horizontalStep, fields
 ])
   .config(routeConfig);
+  // .run(mainstayConfig);
 
 angular.element(document)
   .ready(() => {

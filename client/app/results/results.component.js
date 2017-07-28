@@ -6,7 +6,8 @@ import advancedFieldsTpl from '../../components/advanced-dialog/advanced-dialog.
 
 export class ResultsController {
   /*@ngInject*/
-  constructor ($timeout, $mdDialog, $mdSidenav, FieldsService) {
+  constructor ($rootScope, $timeout, $mdDialog, $mdSidenav, FieldsService) {
+    this.$rootScope = $rootScope;
     this.$timeout = $timeout;
     this.$mdDialog = $mdDialog;
     this.$mdSidenav = $mdSidenav;
@@ -33,7 +34,7 @@ export class ResultsController {
         bindto: '#valueSummary',
         data: {
           columns: [
-            ['Reduce costs', 16.4],
+            ['Reduce costs', ],
             ['Reduce risk', 83.6]
           ],
           type: 'pie'
@@ -59,6 +60,9 @@ export class ResultsController {
     }, 1000);
     this.advancedFieldsDialogCtrl = (scope, $mdDialog) => {
       scope.advanced = this.advanced;
+      scope.updateShadow = (field) => {
+        this.updateShadow(field);
+      };
       scope.cancel = () => {
         $mdDialog.cancel();
       };
@@ -67,6 +71,10 @@ export class ResultsController {
       };
     }
     this.advancedFieldsDialogCtrl.$inject = ['scope', '$mdDialog'];
+
+    if (this.$rootScope.mainstayConfig) {
+      this.$rootScope.mainstayConfig.init();      
+    }
   }
   updateShadow(field) {
     let el = document.getElementById(field.dbEntity);
@@ -94,8 +102,7 @@ export class ResultsController {
       .cancel('Cancel');
     this.$mdDialog.show(confirm).then((result) => {
       field.value = parseInt(result);
-      let el = document.getElementById(field.dbEntity);
-      angular.element(el).val(result).triggerHandler('click');
+      this.updateShadow(field);
     });
   };
   showAdvancedDialog (ev) {

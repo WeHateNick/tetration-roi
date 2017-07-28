@@ -64,7 +64,7 @@
 
 
     <!-- Mainstay shadow forms -->
-    <div id="shadowForm">
+    <div id="shadow-form" style="display: none">
       <div id="shadow-input">
         <h3>Inputs</h3>
         <div>
@@ -257,7 +257,10 @@
           <label>Advanced field 40</label>
           <input type="text" class="regInput microToolInput" id="a40" data-dbentity="a40">
         </div>
+        <button id="msUpdateInputs" onclick="msUpdateInputs()">Update</button>
       </div>
+
+
       <div id="shadow-output">
         <h3>Outputs</h3>
         <div>
@@ -333,6 +336,7 @@
           <input type="text" class="regInput microToolInput" id="valueDistribution9" data-dbentity="valueDistribution9">
         </div>
       </div>
+      <button id="msUpdateOutputs" onclick="msUpdateOutputs()">Update</button>
     </div>
 
     <!-- Mainstay scripts -->

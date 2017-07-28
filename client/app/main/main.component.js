@@ -4,8 +4,9 @@ import routing from './main.routes';
 
 export class MainController {
   /*@ngInject*/
-  constructor (FieldsService) {
+  constructor ($rootScope, FieldsService) {
     this.fieldService = FieldsService;
+    this.$rootScope = $rootScope;
   }
   $onInit () {
     this.steps = [
@@ -29,6 +30,9 @@ export class MainController {
         fields: this.fieldService.basicSections[2].fields
       }
     ];
+    if (this.$rootScope.mainstayConfig) {
+      this.$rootScope.mainstayConfig.init();      
+    }
   }
   updateShadow(field) {
     let el = document.getElementById(field.dbEntity);
