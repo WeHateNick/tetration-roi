@@ -78,7 +78,7 @@ export class ResultsController {
   }
   updateShadow(field) {
     let el = document.getElementById(field.dbEntity);
-    angular.element(el).val(field.value).triggerHandler('click');
+    angular.element(el).val(parseInt(field.value)).triggerHandler('click');
   }
   hasValues (section) {
     var isPopulated = section.fields.find( (field) => !!field.value );

@@ -35,8 +35,10 @@ export class MainController {
     }
   }
   updateShadow(field) {
-    let el = document.getElementById(field.dbEntity);
-    angular.element(el).val(field.value).triggerHandler('click');
+    debugger;
+    let el = document.getElementById(field.dbEntity),
+        val = parseInt(field.value);
+    angular.element(el).val(val).triggerHandler('click');
   }
 }
 

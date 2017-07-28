@@ -349,7 +349,7 @@
           if (scope && scope.$ctrl) {
             let mergeSections = (mergedFields, section) => mergedFields.concat(section.fields);
             let getFieldShadowValues = (field) => {
-              field.value = document.getElementById(field.dbEntity).value;
+              field.value = parseInt(document.getElementById(field.dbEntity).value);
             };
             let fieldService = scope.$ctrl.fieldService;
             let basicFields = fieldService.basicSections.reduce(mergeSections, []);
